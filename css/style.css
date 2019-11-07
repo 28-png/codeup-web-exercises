@@ -1,24 +1,54 @@
-h1 {
+    h1 {
     text-decoration: underline;
     border-style: solid;
     border-color: black;
     background: aqua;
     color: purple;
-    font-size: 6vw;
-}
-body {
+    font-size: 4vw;
+    }
+    body {
     background: coral;
     background-image: url(https://mdn.mozillademos.org/files/11307/bubbles.png);
+        font-family: 'Bowlby One SC', cursive;
 
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    ul li::before {
+        content: "\2022";
+        list-style-type: square;
+        color: blue;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
 }
 
 
+    h3 {
+    color:red;
+    text-decoration: underline ;
+    }
 
-li {
-    font-family: "American Typewriter";
-}
+    tr td {
+        margin: 40px;
+        padding: 40px;
+        border-color: aqua;
+        border-style: groove;
+    }
 
+    a:hover {
+       font-style: italic;
+        font-size: 20px;
+    }
 
-h3 {
-    color: red;
-}
+    #row1 {
+        background-color: aqua;
+    }
+
+    #row2 {
+        background-color: aquamarine;
+    }
