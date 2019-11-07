@@ -52,3 +52,7 @@
     #row2 {
         background-color: aquamarine;
     }
+
+    .interact:hover {
+        color: blueviolet;
+    }
