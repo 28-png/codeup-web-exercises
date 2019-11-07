@@ -5,5 +5,10 @@ h1 {
     background: aqua;
     color: purple;
     font-size: 6vw;
+}
 
+
+li {
+    font-family: "American Typewriter";
+    color: brown;
 }
