@@ -2,6 +2,34 @@ body, html {
     height: 100%;
     width: 100%;
     padding: 0;
-    margin: 0;
+     margin: 0;
     font-family: Arial, Ubuntu, sans-serif;
+}
+
+    .message {
+    border-radius: 5px;
+    border: 2px;
+        padding: 10px;
+        width: 40%;
+        margin: 10px;
+}
+
+.message-info {
+background-color: #cadbfb;
+    color: #5753a9;
+}
+
+.message-success {
+background-color: #cff3da;
+    color: #60a57a;
+}
+
+.message-warning {
+background-color: #fbfac8;
+    color: #9f8f31;
+}
+
+.message-error {
+background-color: #f8d1d5;
+    color: #daa1ab;
 }
