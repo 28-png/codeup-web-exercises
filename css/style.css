@@ -10,6 +10,8 @@
     background: coral;
     background-image: url(https://mdn.mozillademos.org/files/11307/bubbles.png);
         font-family: 'Bowlby One SC', cursive;
+        border: 4px solid black;
+        margin: 10px;
 
     }
 
