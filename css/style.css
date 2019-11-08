@@ -44,7 +44,7 @@
         border-style: groove;
     }
 
-    a:hover {
+    .a:hover {
        font-style: italic;
         font-size: 20px;
         padding: 10px
@@ -65,3 +65,4 @@
     .space {
         padding-left: 5px;
     }
+
