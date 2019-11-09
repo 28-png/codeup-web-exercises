@@ -9,15 +9,31 @@
     <center><h1>Register for Free Today!!!</h1></center>
      <form>
          <fieldset>
-             <div>
-                 <label for="email">Email Address</label>
-                 <input type="email" id="email" name="email" placeholder="Enter Email">
+             <div class="form-group">
+                 <label for="email" class="form-label">Email Address</label>
+                 <input type="email" id="email" name="email" class="input" placeholder="Enter Email">
              </div>
-             <div>
-                 <label for="username">Create Username</label>
-                 <input type="text" id="username" name="username" placeholder="Enter a Username">
+             <div class="form-group">
+                 <label for="username" class="form-label">Create Username</label>
+                 <input type="text" id="username" name="username" class="input" placeholder="Enter a Username">
              </div>
+             <div class="form-group">
+                 <label for="password" class="form-label">Create Password</label>
+                 <input type="password" id="password" name="password" class="input" placeholder="Enter a Password">
+             </div>
+             <div class="form-group">
+                 <label for="re-writePassword" class="form-label">Re-enter Password</label>
+                 <input type="password" id="re-writePassword" class="input" name="password" placeholder="Enter Password">
+             </div>
+             <div class="form-group input">
+                <h5 class="form-label">Gender</h5>
+                 <select name="name-choice" id="name-input">
+                     <option value="male">Male</option>
+                     <option value="female">Female</option>
+                 </select>
+             </div>
+             <button class="btn button-block h">Create Profile</button>
          </fieldset>
       </form>
-    </bodystyle>
+    </body>
 </html>
