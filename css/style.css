@@ -66,6 +66,26 @@
         padding-left: 5px;
     }
 .move {
-    margin-left: 45%;
+    margin-left: 40%;
 
+}
+
+.move2 {
+    margin-right: 1em;
+}
+
+form {
+    margin-left: 75%;
+}
+
+fieldset {
+    background-color: #0fb784;
+    padding: 1em;
+    border: 2px solid black;
+
+
+}
+
+button {
+    font-size: large;
 }
