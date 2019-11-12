@@ -22,6 +22,34 @@
                 </ol>
             </div>
         </fieldset>
+        <fieldset id="fieldset2">
+                <center><h3>Purchasing information</h3></center>
+            <div class="form-group">
+                <label for="bank-name" class="form-label">Bank Name</label>
+                <input type="text" class="input" name="bank-information" id="bank-name" placeholder="Bank Name">
+            </div>
+                <div>
+                    <label for="account-number" class="form-label">Card Number</label>
+                    <input type="number" class="input" name="bank-information" id="account-number" placeholder="Card Number">
+                </div>
+            <div class="form-group input">
+                <label for="card-input" class="form-label">Card Type</label><br>
+                <select name="card-type" id="card-input">
+               <option value="master">Master Card</option>
+                <option value="visa">Visa</option>
+                    <option value="chase">Chase</option>
+                </select>
+            </div>
+                 <div class="form-group">
+                     <label for="security-code" class="form-label">Security Code</label><br>
+                     <input type="number" class="input2" name="bank-information" id="security-code">
+                 </div>
+            <div    class="form-group">
+                <label for="expiration-date" class="form-label">Expiration Date</label>
+                <input type="text" class="input" id="expiration-date" name="bank-information" placeholder="Expiration Date">
+            </div>
+            <button type="submit" class="button-block btn h">Make Payment</button>
+        </fieldset>
     </form>
     </body>
 </html>
