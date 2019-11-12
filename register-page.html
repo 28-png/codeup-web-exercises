@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Teko&display=swap" rel="stylesheet">
 </head>
     <body>
-
     <div>
         <?php
        if(isset($_POST['submit'])){
@@ -15,8 +14,6 @@
         ?>
     </div>
     <center><h1>Register for Free Today!!!</h1></center>
-
-    <div>
      <form action="register-page.html" method="post">
          <fieldset>
              <div class="form-group">
@@ -32,19 +29,19 @@
                  <input type="password" id="password" name="password-input" class="input" placeholder="Enter a Password" required="required">
              </div>
              <div class="form-group">
-                 <label for="re-writePassword" class="form-label">Re-enter Password</label>
-                 <input type="password" id="re-writePassword" class="input" name="password-input" placeholder="Enter Password" required="required">
+                 <label for="password2" class="form-label">Re-enter Password</label>
+                 <input type="password" id="password2" class="input" name="password-input" placeholder="Enter Password" required="required">
              </div>
              <div class="form-group input">
-                <h5 class="form-label">Gender</h5>
+               <h5 class="form-label">Gender</h5>
                  <select name="name-choice" id="name-input">
                      <option value="male">Male</option>
                      <option value="female">Female</option>
                  </select>
              </div>
-             <button type="submit" name="submit" class="btn button-block h">Create Profile<button>
+             <button type="submit" name="submit" class="btn button-block h">Create Profile</button>
          </fieldset>
       </form>
-    </div>
+
     </body>
 </html>
