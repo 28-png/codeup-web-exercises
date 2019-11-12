@@ -7,24 +7,33 @@
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Teko&display=swap" rel="stylesheet">
 </head>
     <body>
+
+    <div>
+        <?php
+       if(isset($_POST['submit'])){
+        }
+        ?>
+    </div>
     <center><h1>Register for Free Today!!!</h1></center>
-     <form>
+
+    <div>
+     <form action="register-page.html" method="post">
          <fieldset>
              <div class="form-group">
                  <label for="email" class="form-label">Email Address</label>
-               <input type="email" id="email" name="email" class="input" placeholder="Enter Email">
+              <input type="email" id="email" name="email" class="input" placeholder="Enter Email" required="required">
              </div>
              <div class="form-group">
                  <label for="username" class="form-label">Create Username</label>
-                 <input type="text" id="username" name="username" class="input" placeholder="Enter a Username">
+                 <input type="text" id="username" name="username" class="input" placeholder="Enter a Username" required="required">
              </div>
              <div class="form-group">
                  <label for="password" class="form-label">Create Password</label>
-                 <input type="password" id="password" name="password-input" class="input" placeholder="Enter a Password">
+                 <input type="password" id="password" name="password-input" class="input" placeholder="Enter a Password" required="required">
              </div>
              <div class="form-group">
                  <label for="re-writePassword" class="form-label">Re-enter Password</label>
-                 <input type="password" id="re-writePassword" class="input" name="password-input" placeholder="Enter Password">
+                 <input type="password" id="re-writePassword" class="input" name="password-input" placeholder="Enter Password" required="required">
              </div>
              <div class="form-group input">
                 <h5 class="form-label">Gender</h5>
@@ -33,8 +42,9 @@
                      <option value="female">Female</option>
                  </select>
              </div>
-             <button type="submit" class="btn button-block h">Create Profile</button>
+             <button type="submit" name="submit" class="btn button-block h">Create Profile<button>
          </fieldset>
       </form>
+    </div>
     </body>
 </html>
