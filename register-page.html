@@ -6,34 +6,32 @@
     <link rel="stylesheet" href="css/register.css">
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Teko&display=swap" rel="stylesheet">
 </head>
+<script>
+    function checkPassword() {
+        var p = f.pass.value;
+        var cp = f.cPass.value;
+        if(p !== cp) {
+           alert('password does not match')
+        } else {
+            alert('passwords match')
+        }
+    }
+</script>
     <body>
-    <center><h1>Register for Free Today!!!</h1></center>
-     <form action="register-page.html" method="post">
+   <center><h1>Register for Free Today!!!</h1></center>
+     <form name="f">
          <fieldset>
              <div class="form-group">
                  <label for="email" class="form-label">Email Address</label>
-              <input type="email" id="email" name="email" class="input" placeholder="Enter Email" required="required">
-             </div>
-             <div class="form-group">
+                <input type="email" id="email" name="email" class="input" placeholder="Enter Email" required="required">
                  <label for="username" class="form-label">Create Username</label>
                  <input type="text" id="username" name="username" class="input" placeholder="Enter a Username" required="required">
-             </div>
-             <div class="form-group">
                  <label for="password" class="form-label">Create Password</label>
-                 <input type="password" id="password" name="password-input" class="input" placeholder="Enter a Password" required="required">
-             </div>
-             <div class="form-group">
+                 <input type="password" id="password" name="pass" class="input" placeholder="Enter a Password" required="required">
                  <label for="password2" class="form-label">Re-enter Password</label>
-                 <input type="password" id="password2" class="input" name="password-input" placeholder="Enter Password" required="required">
+                 <input type="password" id="password2" class="input" name="cPass" placeholder="Enter Password" required="required">
+             <button type="submit" name="submit" class="btn button-block h" value="checkPassword" onclick="checkPassword()">Create Profile</button>
              </div>
-             <div class="form-group input">
-               <h5 class="form-label">Gender</h5>
-                 <select name="name-choice" id="name-input">
-                     <option value="male">Male</option>
-                     <option value="female">Female</option>
-                 </select>
-             </div>
-             <button type="submit" name="submit" class="btn button-block h">Create Profile</button>
          </fieldset>
       </form>
 

@@ -42,7 +42,7 @@ form {
 
 .form-group {
     width: 100%;
-    margin: .5em 0;
+    margin: 1em 0;
 }
 
 .form-label {
@@ -60,11 +60,11 @@ form {
     font-weight: bold;
     border: 1px lightblue;
     background-color: cadetblue;
+    margin-top: 10px;
 }
 .h:hover {
     color: white;
 
 }
-
 
 
