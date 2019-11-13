@@ -16,9 +16,7 @@ body {
     border: 3px solid goldenrod;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    height: 15em;
-    align-content: space-evenly;
+    height: 10em;
 
 }
 .flex-item {
@@ -27,14 +25,22 @@ body {
     padding: 1em;
 }
 
-/*.first-item {*/
-/*    font-size: 15px;*/
-/*}*/
+.first-item {
+    /*font-size: 15px;*/
+    /*order: 2;*/
+    /*align-self: flex-start;*/
 
-/*.second-item {*/
-/*    font-size: 30px;*/
-/*}*/
+}
 
-/*.third-item {*/
-/*    font-size: 45px;*/
-/*}*/
+.second-item {
+    /*font-size: 30px;*/
+    /*order: 1;*/
+    /*align-self: center;*/
+    /*flex-grow: 2;*/
+}
+
+.third-item {
+    /*font-size: 45px;*/
+    /*align-self: flex-end;*/
+    /*flex-grow: 1;*/
+}
