@@ -53,19 +53,15 @@ body {
 
 /*flex solution*/
 .cover {
-    flex-direction: row;
     display:flex;
-    justify-content:center;
-    align-items:center
     /* flex container */
 }
 .flex-form {
     display:flex;
-    flex-grow: .1;
-    /* flex items */
+    margin: auto;
+   /* flex items */
 }
 .destination {
-display: flex;
-    flex-grow: 3;
+flex-basis: 15em;
     /* bigger item */
 }

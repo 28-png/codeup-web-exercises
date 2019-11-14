@@ -7,34 +7,42 @@
 </head>
     <body>
         <script>
-            console.log("Hello world!")
+            console.log("Hello world!");
 
-           function helloWorld() {
-               return "Hello World";
-           }
-        function helloName(name) {
+            function helloWorld() {
+                return "Hello World";
+            }
+            function helloName(name) {
                 return "hello " + name + "!";
-        }
-        console.log(helloName("Matt"));
+            }
+            console.log(helloName("Matt"));
 
-        function add(x,y) {
-            return x + y;
-        }
-        console.log(add(1,1))
-            console.log(add(2,5))
+            function add(x,y) {
+                return x + y;
+            }
+            console.log(add(1,1));
+            console.log(add(2,5));
 
             function addFour(w, x, y, z) {
-            var sum = w + x + y + z;
-            return sum;
-        }
+                var sum = w + x + y + z;
+                return sum;
+            }
 
-        console.log(addFour(3, 2, 4, 8));
+            console.log(addFour(3, 2, 4, 8));
 
 
-            function CalculateRectangleArea(width, length) {
-                return width * length;
-           }
-            console.log(calculateRectangleArea(9, 8));
-       </script>
+            // function CalculateRectangleArea(width, length) {
+            //     return (width * length);
+            // }
+            // console.log(calculateRectangleArea(9, 8));
+            //
+
+            function firstItem(inputArray) {
+               return inputArray[0]
+            }
+
+            console.log(firstItem(['dog', 'cat', 'bird', 'fish']));
+
+        </script>
     </body>
 </html>

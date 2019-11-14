@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+}
+
+main {
+    background: lightgreen;
+    margin-top: 2em;
+    display: grid;
+   /*grid-template-columns: 1fr 1fr 1fr 1fr;*/
+    /*grid-template-rows: 1fr 1fr 1fr;*/
+    grid-template-areas: "one one . . .";
+                        "one one . two .";
+                        ". three three . .";
+    grid-gap: 20px;
+
+}
+main div {
+    font-size: 2em;
+    color: white;
+   background: grey;
+    border: 2px solid black;
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+}
+
+.example-item {
+    background: lightgreen;
+    opacity: .7;
+}
+
+.six {
+display: none;
+
+}
+
+.nine {
+    display: none;
+}
+
+
+.seven {
+    /*grid-area: 2 / 4 / 4 / 5;*/
+display: none;
+}
+
+.ten {
+    /*grid-area: 3 / 3 / 4 / 5;*/
+display: none;
+}
+
+.five {
+    display: none;
+}
+
+.four {
+    display: none;
+}
+
+.eight {
+    display: none;
+}
+
+.one {
+    background-color: purple;
+    grid-area: one;
+}
+
+.two {
+    background-color: orange;
+    grid-area: two;
+}
+
+.three {
+    background-color: blue;
+    grid-area: three;
+}

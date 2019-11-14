@@ -1,31 +1,35 @@
 * {
     box-sizing: border-box;
+
 }
 body {
     margin: 0;
 }
 nav {
-    background: grey;
+    background: #c1c1c1;
 }
+
 ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     align-items: center;
-    font-size: small;
+    font-size: .5em;
     /* made unordered list a flex container */
 }
 nav a {
     text-decoration: none;
     color: black;
-    font-weight: bold;
-    font-family: Verdana;
-    display: inline-block; /* inline-block to increase clickable area beyond the text */
+    font-family: Work Sans;/* inline-block to increase clickable area beyond the text */
     padding: 1em; /* increases clickable area of anchor tags on all sides by 1em */
+    display: inline-block;
+   font-weight: bold;
+
 }
 nav a:hover {
-    background: white;
+    color: blue;
+
 }
 nav ul li:nth-child(6) {
     /*
@@ -38,13 +42,12 @@ nav ul li:nth-child(6) {
 
 nav ul li:nth-child(5) {
     margin: auto;
-    font-size: larger;
-}
-
-
-
-nav ul li:nth-child(4) {
-    flex-grow: .2;
+    font-size: 3em;
+    position: absolute;
+    left: 47vw;
+    padding-top: .2em;
+    padding-bottom: .2em;
+    font-family: Montserrat;
 }
 
 i {
