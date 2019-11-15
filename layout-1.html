@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Layout1</title>
+        </head>
+            <style>
+
+                * {
+                    box-sizing: border-box;
+                }
+
+                body {
+                    margin: 0;
+                    text-align: center;
+                }
+
+                main {
+                    /* add margin to make the top of our grid more visible */
+
+                    margin-top: 2em;
+                    grid-gap: 5px;
+                    background: white;
+                    display: inline-grid;
+                    height: 500px;
+                    width: 500px;
+                    grid-template-columns: repeat(7, 1fr);
+                    grid-template-rows: repeat(7, 1fr);
+                }
+
+                main div {
+                    font-size: 2em;
+                    color: black;
+                    background: grey;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    /* thin out border to 1px */
+                }
+
+                .one {
+                    grid-area: 2 / 1 / 1 / 9;
+                    background-color: #fcd803;
+                }
+
+                .two {
+                    grid-area:  2 / 1 / 8 / 2;
+                    background-color: #fcd803;
+                }
+
+                .three {
+                    grid-area: 8 / 8 / 7 / 2;
+                    background-color: #fcd803;
+                }
+
+                .four {
+                    grid-area: 7 / 7 / 2 / 8;
+                    background-color: #fcd803;
+                }
+
+                .five {
+                    grid-area: 7 / 7 / 2 / 2;
+                    background-color: #fcd803;
+                }
+
+            </style>
+            <body>
+                <main>
+                    <div class="one">Header</div>
+                    <div class="two">Nav</div>
+                   <div class="three">Footer</div>
+                    <div class="four">Ads</div>
+                    <div class="five">Footer</div>
+                </main>
+            </body>
+    </html>
