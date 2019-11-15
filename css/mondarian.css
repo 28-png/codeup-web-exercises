@@ -21,7 +21,7 @@ main div {
     font-size: 2em;
     color: white;
     background: grey;
-    border: 1px solid black; /* thin out border to 1px */
+    border: 5px solid black; /* thin out border to 1px */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,30 +46,30 @@ main div {
 
 .three {
     grid-area: 6 / 9 / 8 / 5;
-
+    background-color: #fbcc0b;
 }
 .four {
-    grid-area: 7 / 1 / 3 / 3;
+    grid-area: 6 / 1 / 3 / 3;
     background-color: #fbcc0b;
 }
 
 .five {
     grid-area: 8 / 1 / 6 / 3;
-
+    background-color: white;
 }
 
 .six {
     grid-area: 8 / 3 / 4 / 5;
-
+    background-color: white;
 }
 
 .seven {
     grid-area: 8 / 1 / 8 / 3;
-
+    background-color: #d81920;
 }
 
 .eight {grid-area: 6 / 5 / 4 / 9;
-
+    background-color: white;
 }
 
 .nine {
