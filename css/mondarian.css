@@ -10,13 +10,15 @@ main {
     /* add margin to make the top of our grid more visible */
 
     margin-top: 2em;
+    border: 5px solid black;
     background: lightgreen;
     display: inline-grid;
-    height: 500px;
+   height: 500px;
     width: 500px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
 }
+
 main div {
     font-size: 2em;
     color: white;
