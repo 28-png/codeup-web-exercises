@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #60a57a;
+    color: white;
+    font-family: Roboto;
+
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: auto repeat(8, 350px) auto;
+    grid-template-rows: auto repeat(10, 300px) auto;
+
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+header {
+    grid-area: 1 / 1 / 2 / 8;
+    background-color: black;
+
+}
+
+header ul {
+    display: flex;
+
+}
+
+a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 1.3em;
+    padding: 1em .5em 1em .5em;
+    margin-left: 1.5em
+}
+
+
