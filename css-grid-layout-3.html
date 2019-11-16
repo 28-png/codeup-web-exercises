@@ -1,10 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+    <html lang="en">
             <head>
                 <meta charset="UTF-8">
                 <title>css-grid-layout-3</title>
             </head>
-        <body>
+            <style>
 
-        </body>
+                * {
+                    box-sizing: border-box;
+                }
+
+                body {
+                    margin: 0;
+                    text-align: center;
+                }
+
+                main {
+                    /* add margin to make the top of our grid more visible */
+
+                    margin-top: 2em;
+                    grid-gap: 5px;
+                    background: white;
+                    display: inline-grid;
+                    height: 600px;
+                    width: 600px;
+                    grid-template-columns: repeat(12, 1fr);
+                    grid-template-rows: repeat(11, 1fr);
+                }
+
+                main div {
+                    font-size: 2em;
+                    color: black;
+                    background: grey;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    /* thin out border to 1px */
+                }
+
+                .one {
+                    grid-area: 1 / 1 / 4 / 13;
+                    background-color: #fcd803;
+                }
+
+                .two {
+                    grid-area: 4 / 1 / 12 / 4;
+                    background-color: #fcd803;
+                }
+
+                .three {
+                    grid-area: 4 / 4 / 6 / 7;
+                    background-color: #fcd803;
+                }
+
+                .four {
+                    grid-area: 6 / 13 / 4 / 7;
+                    background-color: #fcd803;
+                }
+
+                .five {
+                    grid-area: 6 / 4 / 8 / 10;
+                    background-color: #fcd803;
+                }
+
+                .six {
+                    grid-area: 6 / 10 / 8 / 13;
+                    background-color: #fcd803;
+
+                }
+
+                .seven {
+
+                    grid-area: 10 / 4 / 8 / 7;
+                    background-color: #fcd803;
+                }
+
+                .eight {
+                    grid-area: 10 / 7 / 8 / 10;
+                    background-color: #fcd803;
+
+                }
+
+                .nine {
+                    grid-area: 10 / 10 / 8 / 13;
+                    background-color: #fcd803;
+                }
+
+
+
+
+
+            </style>
+            <body>
+            <main>
+                <div class="one">1</div>
+                <div class="two">2</div>
+                <div class="three">3</div>
+              <div class="four">4</div>
+                <div class="five">5</div>
+                <div class="six">6</div>
+                <div class="seven">7</div>
+                <div class="eight">8</div>
+                <div class="nine">9</div>
+                <div class="ten">10</div>
+            </main>
+            </body>
 </html>
