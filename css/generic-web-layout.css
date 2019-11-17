@@ -43,4 +43,26 @@ a {
     margin-left: 1.5em
 }
 
+header a:hover {
+    background-color: #333333;
+}
 
+nav {
+    grid-area: 2 / 2 / 12 / 3;
+    background-color: #f0f0f0;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.nav-link-color {
+    color: black;
+}
+
+.menu-weight {
+    font-weight: bold;
+}
