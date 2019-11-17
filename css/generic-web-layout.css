@@ -13,8 +13,9 @@ body {
 .wrapper {
     display: grid;
     grid-template-columns: auto repeat(6, 350px) auto;
-    grid-template-rows: auto repeat(8, 320px) auto;
+    grid-template-rows: auto repeat(6, 320px) auto;
     height: 100vh;
+
 
 }
 
@@ -50,7 +51,7 @@ header a:hover {
 }
 
 nav {
-    grid-area: 2 / 1 / 12 / 3;
+    grid-area: 2 / 1 / 9 / 3;
     background-color: #f0f0f0;
 }
 
@@ -76,8 +77,8 @@ main {
     margin-left: 20px;
     margin-right: 210px;
     width: 97em;
-    grid-template-columns: repeat(6, 270px);
-    grid-template-rows: repeat(6, 270px);
+    grid-template-columns: repeat(6, 272px);
+    grid-template-rows: repeat(8, 250px);
 
 }
 
@@ -101,16 +102,43 @@ main div {
     align-items: center;
     justify-content: center;
     font-size: larger;
+    margin: 70px 0;
 }
 
 main div:nth-of-type(1) {
     grid-area: 1 / 4 / 1 / 6;
-    margin: 70px 0;
+
 
 }
 
 main div:nth-of-type(2) {
     grid-area: 2 / 4 / 2 / 6;
+    margin-top: -40px;
+    margin-bottom: 40px;
+
+}
+
+main div:nth-of-type(3) {
+    grid-area: 3 / 4 / 3 / 6;
+
+
+}
+
+main div:nth-of-type(4) {
+    grid-area: 4 / 4 / 4 / 6;
+    margin-top: -40px;
+    margin-bottom: 40px;
+
+}
+
+main div:nth-of-type(5) {
+    grid-area: 5 / 4 / 5 / 6;
+
+
+}
+
+main div:nth-of-type(6) {
+    grid-area: 6 / 4 / 6 / 6;
     margin-top: -40px;
     margin-bottom: 40px;
 
@@ -123,4 +151,32 @@ h1 {
 
 p {
     color: black;
+}
+
+footer {
+    display: grid;
+    background-color: black;
+    grid-area: 8 / 3 / 9 / 8;
+    margin: 120px 0;
+
+}
+
+footer div {
+    background-color: #878dcd;
+
+
+}
+
+footer a {
+    margin-left: -5px;
+
+}
+
+
+
+h2 {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    padding: 30px;
 }
