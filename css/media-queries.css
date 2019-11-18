@@ -1,4 +1,4 @@
-@media all and (max-width: 575px) {
+@media all and (max-width: 675px) {
 
 
     .alert-info {
@@ -40,7 +40,7 @@
 
 }
 
-@media all and (min-width: 1200px) {
+@media all and (min-width: 800px) {
     body {
         display: grid;
         grid-template-columns: 3fr 2fr;
@@ -58,11 +58,35 @@
         list-style: none;
         display: flex;
         padding: 1em;
-        justify-content: space-evenly;
+        justify-content: end;
+    }
+
+    li {
+        padding: 1em;
+    }
+
+    footer {
+        margin-top: 20em;
     }
 
     .header-img {
         grid-area: header-img;
+
     }
+
+    img {
+        width: 100%;
+    }
+
+    .main {
+        display: grid;
+        grid-area: main;
+        padding: 1em;
+    }
+
+    .sub-section {
+        padding: 1em;
+    }
+
 
 }
