@@ -1,5 +1,10 @@
 @media all and (max-width: 768px) {
-
+* {
+    box-sizing: border-box;
+}
+    h1 {
+        text-align: center;
+    }
 
     .alert-info {
         display: flex;
@@ -12,6 +17,10 @@
         padding: 1em;
     }
 
+    .alert-info a {
+        text-decoration: none;
+        color: black;
+    }
 
     .nav-links {
         list-style: none;
@@ -38,9 +47,14 @@
         width: 100%;
     }
 
+
 }
 
 @media all and (min-width: 769px) {
+   * {
+       box-sizing: border-box;
+   }
+
     body {
         display: grid;
         grid-template-columns: 3fr 2fr;
@@ -67,6 +81,8 @@
 
     footer {
         margin-top: 20em;
+        display: grid;
+        grid-area: footer;
     }
 
     .header-img {
@@ -86,7 +102,10 @@
 
     .sub-section {
         padding: 1em;
+        display: grid;
+        grid-area: sub-section;
     }
+
 
 
 }
