@@ -5,7 +5,6 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #60a57a;
     color: white;
     font-family: Roboto;
 
@@ -13,9 +12,8 @@ body {
 
 .wrapper {
     display: grid;
-    grid-template-columns: auto repeat(6, 350px) auto;
+    grid-template-columns: repeat(6, 350px) auto;
     grid-template-rows: auto repeat(6, 320px) auto;
-
 
 }
 
@@ -26,9 +24,9 @@ ul {
 }
 
 header {
-    grid-area: 1 / 2 / 2 / 7;
+    grid-area: 1 / 1 / 2 / 7;
     background-color: black;
-    width: 100vw;
+    /*     width: 100vw; */
 
 }
 
@@ -51,7 +49,7 @@ header a:hover {
 }
 
 nav {
-    grid-area: 2 / 1 / 9 / 3;
+    grid-area: 2 / 1 / 9 / 2;
     background-color: #f0f0f0;
 }
 
@@ -73,13 +71,11 @@ nav ul {
 
 main {
     display: inline-grid;
-    border: 1px solid black;
-    grid-area: 2 / 3 / 7 / 6;
+    grid-area: 2 / 2 / 7 / 6;
     margin-left: 20px;
     margin-right: 210px;
-    width: 97em;
     grid-template-columns: repeat(6, 272px);
-    grid-template-rows: repeat(8, 250px);
+    grid-template-rows: repeat(6, 250px);
 
 }
 
@@ -156,16 +152,14 @@ p {
 
 footer {
     display: grid;
-    background-color: black;
-    grid-area: 8 / 3 / 8 / 7;
-    width: 90vw;
-
+    background-color: #666666;
+    grid-area: 8 / 2 / 8 / 7;
+    /*     width: 80vw; */
 
 }
 
 footer div {
-    background-color: #878dcd;
-    grid-area: 7 / 1 / 7 / 9;
+    background-color: #333333;
 
 
 }
@@ -175,11 +169,51 @@ footer a {
 
 }
 
+.font {
+    color: white;
+    font-size: small;
+    margin-left: 30px
+}
 
+.font2 {
+    font-size: small;
+    text-decoration: underline;
+}
 
 h2 {
-    margin-left: 20px;
     display: flex;
     align-items: center;
-    padding: 35px;
+    padding: 30px;
+}
+
+span {
+    grid-area: 7 / 4 / 7 / 7;
+    display: flex;
+    align-items: center;
+
+
+}
+
+span li:nth-last-of-type(6) {
+    margin-left: -190px;
+}
+
+span li {
+    display: inline-flex;
+
+
+}
+
+.color2 {
+    color: black;
+    padding: 1em;
+}
+
+.color2:hover {
+    color: white;
+    background-color: black;
+}
+
+.color {
+    color: black;
 }
