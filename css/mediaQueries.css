@@ -1,0 +1,28 @@
+@media all and (max-width: 1199px) {
+    body {
+        background-image: url("img/colorful3.png");
+    }
+}
+@media all and (max-width: 991px) {
+    body {
+        background-image: url("img/colorful2.png");
+    }
+}
+@media all and (max-width: 768px) {
+    body {
+        background-image: url("img/colorful3.png");
+    }
+}
+@media all and (max-width: 575px) {
+    body {
+        background-image: url("img/instruments.jpg");
+    }
+}
+
+@media all and (min-width: 1200px) {
+    body {
+        background-color: #30447B;
+        color: orangered;
+    }
+
+}
