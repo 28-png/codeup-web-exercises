@@ -62,7 +62,7 @@
                 <div class="jumbotron jumbotron-fluid">
                     <h1 class="display-4">Welcome to pizza world!</h1>
                 </div>
-         </div>
+
 <!--ending of jumbotron-->
 
 <h2>Build your own pizza!</h2>
@@ -152,37 +152,113 @@
             </div>
             <div class="card-body">
                 <ul class="list-group">
-                    <li class="list-group-item bg-light text-dark">Cheese</li>
+                    <li class="list-group-item bg-light text-dark">Sauce</li>
                 </ul>
-                <div class="form-group card-body border">
+                <div class="form-group card border">
+                    <div class="card-body">
                    <label for="exampleFormControlSelect2">What Type?</label>
-                    <select class="form-control" id="exampleFormControlSelect2">
+                    <select class="form-control " id="exampleFormControlSelect2">
                         <option>Tomato sauce</option>
-                      <option>Marinara sauce</option>
-                        <option>BBQ sauce</option>
-                        <option>Alfredo Sauce</option>
-                    </select>
-                </div>
-                    <div class="card-body border">
-                    <label for="exampleFormControlSelect3">What Type?</label>
-                   <select class="form-control" id="exampleFormControlSelect3">
-                       <option>Tomato sauce</option>
                         <option>Marinara sauce</option>
                         <option>BBQ sauce</option>
-                        <option>Alfredo Sauce</option>
+                       <option>Alfredo Sauce</option>
                     </select>
                     </div>
+                    <div class="card-body border">
+                    <label for="exampleFormControlSelect3">How Much?</label>
+                   <select class="form-control" id="exampleFormControlSelect3">
+                       <option>Light</option>
+                        <option>Normal</option>
+                        <option>Extra</option>
+                    </select>
+                    </div>
+               </div>
+                <ul class="list-group">
 
+                <li class="text-right list-group-item bg-light"><div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-primary">< Previous Step</button>
+                   <button type="button" class="btn btn-primary">Next Step ></button>
+                </div></li>
+                </ul>
+            </div>
         </div>
+    </div>
 
+            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        Choose Toppings
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item bg-light text-dark">Choose Meats</li>
+                            <li class="list-group-item"><div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleCheckbox1" value="option1" checked>
+                                <label class="form-check-label" for="exampleCheckbox1">
+                                    Beef
+                                </label>
+                            </div>
 
+                            <li class="list-group-item"><div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleCheckbox2" value="option1" checked>
+                                <label class="form-check-label" for="exampleCheckbox2">
+                                   Ham
+                                </label>
+                            </div>
 
+                            <li class="list-group-item"><div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleCheckbox3" value="option1" checked>
+                                <label class="form-check-label" for="exampleCheckbox3">
+                                    Philly Cheese Steak
+                                </label>
+                            </div>
 
-    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
-</div>
+                            <li class="list-group-item"><div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleCheckbox4" value="option1" checked>
+                                <label class="form-check-label" for="exampleCheckbox4">
+                                    Bacon
+                                </label>
+                            </div>
+                        </ul>
+                   </div>
 
+                        <div class="card-body">
+                            <ul class="list-group">
+                                <li class="list-group-item bg-light text-dark">Choose Non-meats</li>
+                                <li class="list-group-item"><div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleCheckbox5" value="option1" checked>
+                                    <label class="form-check-label" for="exampleCheckbox5">
+                                        Green Peppers
+                                    </label>
+                                </div>
 
+                                <li class="list-group-item"><div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleCheckbox6" value="option1" checked>
+                                    <label class="form-check-label" for="exampleCheckbox6">
+                                        Mushrooms
+                                    </label>
+                                </div>
 
+                                <li class="list-group-item"><div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleCheckbox7" value="option1" checked>
+                                    <label class="form-check-label" for="exampleCheckbox7">
+                                        Onions
+                                    </label>
+                                </div>
+
+                                <li class="list-group-item"><div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleCheckbox8" value="option1" checked>
+                                    <label class="form-check-label" for="exampleCheckbox8">
+                                        Jalepeno Peppers
+                                        </label>
+                                    </div>
+                                </ul>
+                            </div>
+                        <ul class="list-group">
+                        <li class="list-group-item bg-light text-dark text-right"><a href="#" class="btn btn-primary">Checkout <i class="fas fa-shopping-cart"></i></a></li>
+                    </ul>
+                </div>
+           </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
