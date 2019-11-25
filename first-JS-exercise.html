@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS</title>
+    <script>
+<!--        movies-->
+        function movies(x) {
+            return 3 * x;
+        }
+
+        console.log(movies(3 + 5 + 1));
+        //solution
+
+
+
+//silicon valley
+        var facebook = 350;
+        var google = 400;
+        var amazon = 380;
+        var facebookPays = facebook * 10;
+        var amazonPays = amazon * 4;
+       var googlePays = google * 6;
+
+        console.log(facebookPays + amazonPays + googlePays);
+        //solution
+
+
+
+        //school
+        // var fullClass = 10 < 1;
+        // var scheduleConflict = 10 > 1;
+        // console.log(fullClass && scheduleConflict);
+        //solution
+var classAt8AM = false;
+var classSize = 125;
+var CurrentClassSize = 108;
+canRegister = (CurrentClassSize < classSize) && !classAt8AM;
+console.log(canRegister);
+
+//coupon
+//         var coupon = 2 < 3;
+//         console.log(coupon);
+    //    solution
+        var hasKrogerCard = true;
+        var cartSize = 6;
+        var offerValid = true;
+        var isPremiumMember = offerValid && (cartSize > 2 || hasKrogerCard);
+console.log(isPremiumMember);
+
+
+//passwords
+// var username = 'codeup';
+// var password = 'notastrongpassword';
+//
+// var usernameRequirements1 = username <= 20;
+// var usernameRequirements = usernameRequirements1;
+// var passwordRequirment1 = password >= 5;
+// var passwordRequirment2 = password !== username;
+// var passwordRequirements = passwordRequirment1 && passwordRequirment2;
+// console.log(passwordRequirements);
+// console.log(usernameRequirements);
+    //    solution
+var username = 'codeup';
+var password = 'notastrongpassword';
+var atLeastFivePass = password.length >= 5;
+var usernameNotInPass = !password.indexOf(username);
+var usernameNotAParagraph = username.length <= 20;
+var noWhiteSpace = username.trim() === username && password.trim() === password;
+console.log(atLeastFivePass);
+console.log(usernameNotAParagraph);
+console.log(usernameNotInPass);
+console.log(noWhiteSpace);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
