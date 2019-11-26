@@ -86,19 +86,19 @@ li{
     /* margin-bottom: 50px;*/
 }
 #custom .badge{
-    height:18px;
-    width:18px;
+    height:15px;
+    width:15px;
     display: flex;
     justify-content: center;
-    flex-direction: column;
+   flex-direction: column;
     text-align: center;
     float: right;
     margin-left: 6px;
-    font-size: 9px;
+    font-size: 8px;
 }
 
 #custom .body-text {
-    font-size: 12px;
+    font-size: 10px;
     text-transform: uppercase;
     float: left;
 }
