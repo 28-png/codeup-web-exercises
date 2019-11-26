@@ -1,0 +1,108 @@
+:root {
+    --main-bg-color: #E6563B;
+}
+
+body {
+    height: 100%;
+    background-color: #E6E6E6;
+    padding:0;
+    font-family: 'Abel', sans-serif;
+    /*margin:10em 10em;*/
+}
+#custom .circle {
+    border-radius: 50%;
+    color: white;
+    height: 100px;
+    width: 100px;
+    display: table;
+    margin: 20px auto;
+    border:6px solid white;
+    font-family: 'Abel', sans-serif;
+}
+
+.design{
+    background-color: var(--main-bg-color);
+}
+
+/*KEEPS TEXT DIRECTLY IN THE MIDDLE*/
+.circle p {
+    vertical-align: middle;
+    display: table-cell;
+}
+.header{
+    font-family: 'Anton', sans-serif;
+}
+li{
+    list-style: none;
+}
+
+#custom .main-logo-xs {
+    position: relative;
+    bottom: 25px;
+    margin-bottom: 50px;
+}
+
+
+#custom .custom-container {
+    background-color: white;
+    width: 100%;
+    height: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.red{
+    background: #E6563B;
+    font-weight: bold;
+}
+.yellow{
+    background:#dea03d;
+    font-weight: bold;
+}
+.green{
+    background: #7cb06b;
+    font-weight: bold;
+}
+.blue{
+    background: #00aba9;
+    font-weight: bold;
+}
+.clickbait{
+    font-family: 'Anton', sans-serif;
+    font-weight: bold;
+    font-size: larger;
+    height: 15%
+}
+
+#custom .new-nav {
+    background-color: white;
+    height: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#custom .main-logo-s {
+    position: relative;
+    top: 50px;
+    /* margin-bottom: 50px;*/
+}
+#custom .badge{
+    height:18px;
+    width:18px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    float: right;
+    margin-left: 6px;
+    font-size: 9px;
+}
+
+#custom .body-text {
+    font-size: 12px;
+    text-transform: uppercase;
+    float: left;
+}
+
+#custom .size {
+    font-size: x-small;
+}
