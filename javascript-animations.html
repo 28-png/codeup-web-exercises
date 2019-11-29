@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/javascript-animations.css">
 </head>
 <body>
-<form>
+<form id="form" method="GET">
     <div class="field-name">
         <i class="fas fa-user"></i>
         <input type="text" name="user" placeholder="Username" required>
@@ -37,17 +37,17 @@ var arrows = document.querySelectorAll(".fa-arrow-down");
 
 arrows.forEach(arrow => {
 arrow.addEventListener("click", () => {
-var input = arrow.previousElementsSibling;
-var parent = arrow.parentElement;
-var nextForm = parent.nextElementSibling;
+const input = arrow.previousElementsSibling;
+const parent = arrow.parentElement;
+const nextForm = parent.nextElementSibling;
 
 
 
       if(input.type === "text" && validateUser(input)) {
            nextSlide(parent, nextForm);
         }
-            }
-    }
+            })
+    })
 }
 
 function validateUser(user) {
