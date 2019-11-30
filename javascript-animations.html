@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/javascript-animations.css">
 </head>
 <body>
-<form id="form" method="GET">
+<form>
     <div class="field-name">
         <i class="fas fa-user"></i>
         <input type="text" name="user" placeholder="Username" required>
@@ -31,47 +31,8 @@
         <i class="fas fa-check"></i>
     </div>
 </form>
-<script>
-function animatedForm() {
-var arrows = document.querySelectorAll(".fa-arrow-down");
+<script defer src="js/javascript.js">
 
-arrows.forEach(arrow => {
-arrow.addEventListener("click", () => {
-const input = arrow.previousElementsSibling;
-const parent = arrow.parentElement;
-const nextForm = parent.nextElementSibling;
-
-
-
-      if(input.type === "text" && validateUser(input)) {
-           nextSlide(parent, nextForm);
-        }
-            })
-    })
-}
-
-function validateUser(user) {
-if(user.value.length < 6) {
-console.log("not long enough");
-error("rgb(189, 87,87");
-} else {
-error("rgb(87, 189, 130");
-return true;
-}
-}
-
-function nextSlide(parent, nextForm) {
-    parent.classList.add('inactive');
-    parent.classList.remove('active');
-    nextForm.classList.add('active');
-}
-
-function error(color) {
-document.body.style.backgroundColor = color;
-}
-
-
-animatedForm();
 </script>
 </body>
 </html>
