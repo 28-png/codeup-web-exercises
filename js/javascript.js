@@ -15,7 +15,8 @@ function animatedForm() {
            nextSlide(parent, nextForm);
        } else {
            parent.style.animation = "shake 0.5s ease";
-       }
+
+        }
        });
     });
 }
@@ -46,6 +47,15 @@ function validatePassword(password) {
     } else {
        error('rgb(87, 189, 130)');
        return true;
+    }
+}
+
+var check = function() {
+    if(document.getElementById('password').value === document.getElementById('confirm_password').value) {
+        error('rgb(87, 189, 130)');
+        return true;
+    } else {
+    error('rgb(189, 87, 87)');
     }
 }
 
