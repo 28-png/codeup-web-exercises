@@ -16,7 +16,7 @@ function animatedForm() {
        } else {
            parent.style.animation = "shake 0.5s ease";
        }
-        });
+       });
     });
 }
 
@@ -39,6 +39,8 @@ function validateEmail(email) {
         error('rgb(189, 87, 87)');
     }
 }
+
+
 
 function nextSlide(parent, nextForm) {
     parent.classList.add('inactive');
