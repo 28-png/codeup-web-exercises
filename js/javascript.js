@@ -41,33 +41,34 @@ function validateEmail(email) {
     }
 }
 
-function validatePassword(password) {
-    if (password.value.length < 10) {
-       error('rgb(189, 87, 87)');
-    } else {
-       error('rgb(87, 189, 130)');
-       return true;
-    }
-}
+// function validatePassword(password) {
+//     if (password.value.length < 10) {
+//        error('rgb(189, 87, 87)');
+//     } else {
+//        error('rgb(87, 189, 130)');
+//        return true;
+//     }
+// }
 
-var check = function() {
-    if(document.getElementById('password').value === document.getElementById('confirm_password').value) {
+    function validatePassword(password) {
+    if(password.value.length > 10) {
         error('rgb(87, 189, 130)');
         return true;
     } else {
     error('rgb(189, 87, 87)');
+
     }
 }
 
-// function validatePassword2(password2) {
-//     if (password2.length.value !== password.length.vaule) {
-//         error('rgb(189, 87, 87)');
-//     } else {
-//        error('rgb(87, 189, 130)');
-//         return true;
-//     }
-// }
-
+var check = function() {
+    if (document.getElementById('password').value ==
+        document.getElementById('confirm_password').value) {
+       error('rgb(87, 189, 130)');
+        return true;
+    } else {
+       error('rgb(189, 87, 87)');
+    }
+}
 
 
 function nextSlide(parent, nextForm) {
