@@ -13,6 +13,7 @@ function animatedForm() {
            nextSlide(parent, nextForm);
        } else if (input.type === "password" && validatePassword(input)) {
            nextSlide(parent, nextForm);
+
        } else {
            parent.style.animation = "shake 0.5s ease";
 
