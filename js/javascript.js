@@ -11,7 +11,7 @@ function animatedForm() {
            nextSlide(parent, nextForm);
       } else if (input.type === "email" && validateEmail(input)) {
            nextSlide(parent, nextForm);
-       } else if (input.type === "password" && validateUser(input)) {
+       } else if (input.type === "password" && validatePassword(input)) {
            nextSlide(parent, nextForm);
        } else {
            parent.style.animation = "shake 0.5s ease";
@@ -39,6 +39,24 @@ function validateEmail(email) {
         error('rgb(189, 87, 87)');
     }
 }
+
+function validatePassword(password) {
+    if (password.value.length < 10) {
+       error('rgb(189, 87, 87)');
+    } else {
+       error('rgb(87, 189, 130)');
+       return true;
+    }
+}
+
+// function validatePassword2(password2) {
+//     if (password2.length.value !== password.length.vaule) {
+//         error('rgb(189, 87, 87)');
+//     } else {
+//        error('rgb(87, 189, 130)');
+//         return true;
+//     }
+// }
 
 
 
