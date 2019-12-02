@@ -42,21 +42,18 @@ function validateEmail(email) {
     }
 }
 
-// function validatePassword(password) {
-//     if (password.value.length < 10) {
-//        error('rgb(189, 87, 87)');
-//     } else {
-//        error('rgb(87, 189, 130)');
-//        return true;
-//     }
-// }
+
 
     function validatePassword(password) {
-    if(password.value.length > 10) {
-        error('rgb(87, 189, 130)');
+   const strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+   const mediumRegex = new RegExp('^((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9]))(?=.{6,})');
+    if(strongRegex.test(password.value)) {
+      error('rgb(87, 189, 130)');
         return true;
+    } else if(mediumRegex.test(password.value)) {
+    error('rgb(255, 126, 0)')
     } else {
-    error('rgb(189, 87, 87)');
+        error('rgb(189, 87, 87)');
 
     }
 }
@@ -67,9 +64,11 @@ var check = function() {
        error('rgb(87, 189, 130)');
         return true;
     } else {
-       error('rgb(189, 87, 87)');
+      error('rgb(255, 191, 0)');
+       return false;
     }
 }
+
 
 
 function nextSlide(parent, nextForm) {
