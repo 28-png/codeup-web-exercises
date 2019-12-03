@@ -80,7 +80,7 @@ function calculateTip(perc, total) {
     return perc * total;
 }
 
-
+console.log(calculateTip(.20, 20));
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
