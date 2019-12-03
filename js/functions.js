@@ -13,7 +13,7 @@ function sayHello(name) {
     return 'Hello ' + name + '!';
 }
 
-console.log(sayHello('Matt'));
+// console.log(sayHello('Matt'));
 
 /**
  * TODO:
@@ -23,7 +23,8 @@ console.log(sayHello('Matt'));
  * console.log 'helloMessage' to check your work
  */
 
-
+var helloMessage = sayHello('Matt');
+console.log(helloMessage);
 
 /**
  * TODO:
@@ -31,6 +32,9 @@ console.log(sayHello('Matt'));
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
+
+var myName = 'Matt';
+console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -53,6 +57,17 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
+function isTwo(random) {
+    if(random === 2) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+        console.log(random);
+console.log(isTwo(random));
+
 
 /**
  * TODO:
@@ -65,6 +80,10 @@ var random = Math.floor((Math.random() * 3) + 1);
  * > calculateTip(0.25, 25.50) // returns 6.37
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
+function calculateTip(perc, total) {
+    return perc * total;
+}
+
 
 /**
  * TODO:
@@ -72,6 +91,9 @@ var random = Math.floor((Math.random() * 3) + 1);
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
+// var perc = Number(prompt('How much is the total bill?'));
+// var total = Number(prompt('What is the tip percentage?'));
+// alert('you owe ' + calculateTip(perc, total) + ' in tip');
 
 /**
  * TODO:
@@ -87,3 +109,10 @@ var random = Math.floor((Math.random() * 3) + 1);
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+
+function applyDiscount (originalPrice, discountPercentage) {
+    var discountAmount = originalPrice * discountPercentage;
+    return originalPrice - discountAmount;
+}
+
+console.log(applyDiscount(45.99, .12));
