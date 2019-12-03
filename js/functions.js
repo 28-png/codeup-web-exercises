@@ -13,7 +13,7 @@ function sayHello(name) {
     return 'Hello ' + name + '!';
 }
 
-// console.log(sayHello('Matt'));
+console.log(sayHello('Matt'));
 
 /**
  * TODO:
@@ -58,11 +58,7 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 function isTwo(random) {
-    if(random === 2) {
-        return true;
-    } else {
-        return false;
-    }
+return random === 2;
 }
 
         console.log(random);
@@ -91,9 +87,9 @@ function calculateTip(perc, total) {
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-// var perc = Number(prompt('How much is the total bill?'));
-// var total = Number(prompt('What is the tip percentage?'));
-// alert('you owe ' + calculateTip(perc, total) + ' in tip');
+var perc = Number(prompt('How much is the total bill?'));
+var total = Number(prompt('What is the tip percentage?'));
+alert('you owe ' + calculateTip(perc, total) + ' in tip');
 
 /**
  * TODO:
