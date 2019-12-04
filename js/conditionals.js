@@ -15,7 +15,24 @@
  *
  * Can you refactor your code to use functions?
  */
-
+// do not put a var in confirm it will return boolean value.
+// Number(confirm('Would you like to enter a number'))
+// var enterNumber = Number(prompt('enter a number here'))
+// var addHundred = enterNumber + 100;
+// var isPositiveOrNegative = (enterNumber > 0) ? 'positive' : 'negative';
+//
+// var isOddOrEven = (enterNumber & 1) ? 'odd' : 'even';
+// if(enterNumber > 0) {
+//     alert('this number is ' + isPositiveOrNegative)
+//     alert('this number is ' + isOddOrEven)
+//     alert('this number is ' + addHundred + ' plus 100')
+// } else if(enterNumber < 0) {
+//     alert('this number is ' + isPositiveOrNegative)
+//     alert('this number is ' + isOddOrEven)
+//     alert('this number is ' + addHundred + ' plus 100')
+// } else {
+//     alert('that is not a number')
+// }
 /* ########################################################################## */
 
 /**
@@ -35,6 +52,25 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
+// function analyzeColor(colors) {
+//     var colorMessage;
+//     if(colors === 'blue') {
+//        colorMessage = 'blue is the color of the sky'
+//     } else if (colors === 'red'){
+//         colorMessage = 'Strawberries are red'
+//     } else if (colors === 'cyan') {
+//         colorMessage = 'I dont know anything about cyan'
+//     } else {
+//         colorMessage = 'that is not in the color list'
+//     }
+//     return colorMessage;
+// }
+
+// console.log(analyzeColor(randomColor))
+// console.log(analyzeColor('cyan'))
+// console.log(analyzeColor('blue'))
+// console.log(analyzeColor('orange'))
+
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -48,12 +84,34 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message every time you refresh the page
  */
-
+// console.log(analyzeColor(randomColor))
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
-
+// function analyzeColor(colors) {
+//     var colors = prompt('type in red, blue, or cyan')
+//     var colorMessage;
+//     switch (colors) {
+//         case 'blue':
+//             alert('blue is the color of the sky')
+//         colorMessage = 'blue is the color of the sky'
+//         break;
+//         case 'red':
+//             alert('strawberries are red')
+//             colorMessage = 'strawberries are red'
+//             break;
+//         case 'cyan':
+//             alert('I dont know anything about cyan')
+//             colorMessage = 'I dont know anything about cyan'
+//             break;
+//        default:
+//            alert('that is not on the color list')
+//             colorMessage = 'that is not in the color list'
+//             break;
+//     }
+//     return colorMessage;
+// }
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
@@ -82,7 +140,6 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -91,4 +148,34 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+var num = Number(prompt('enter a number'))
+var one = num * .10; var oneTotal = num - one;
+var two = num * .25; var twoTotal = num - two;
+var three = num * .35; var threeTotal = num - three;
+var four = num * .50; var fourTotal = num - four;
+function calculateTotal(num) {
+    switch(num) {
+        case 0:
+            alert('no discount')
+          break;
+        case 1:
+            alert(oneTotal.toFixed(2) + ' discount is 10%');
+            break;
+        case 2:
+            alert(twoTotal.toFixed(2) + ' discount is 25% off!')
+            break;
+        case 3:
+            alert(threeTotal.toFixed(2) + ' discount is 35% off!')
+            break;
+        case 4:
+            alert(fourTotal.toFixed(2) + ' is 50% off!')
+            break;
+        case 5:
+            alert('it is free!')
+            break;
+    }
+}
+
+console.log(calculateTotal(luckyNumber))
+

@@ -305,6 +305,11 @@ console.log("hello from conditionals lec.js!");
 // }
 
 //WRITE YOUR TERNARY STATEMENT HERE!
+// var weather = 'sunny'
+//     var weatherMessage;
+// (weather === 'rainy') ? weatherMessage = "It\'s Raining!" : weatherMessage = "Have a nice day!";
+//
+// console.log(weatherMessage);
 
 
 
@@ -327,10 +332,42 @@ console.log("hello from conditionals lec.js!");
 
 
 //TODO: Write a switch statement that evaluates weather as the condition. Check for "rainy", "sunny", "snow", and a default case.
-
+// var weather = prompt("what is the weather today?")
+// switch(weather) {
+//     case "rainy":
+//         alert('It\'s raining!')
+//         break;
+//     case "snowing":
+//         alert('it is snowing!')
+//         break;
+//     case"sunny":
+//         alert("it is sunny!")
+//         break;
+//     default:
+//         alert("have a nice day!")
+//         break;
+// }
 
 //TODO: Rewrite the intersection function from earlier as a switch statement.
-
+// function checkTrafficLight(trafficLights){
+// var lightMessage;
+// switch(trafficLights) {
+//     case"red":
+//         lightMessage = 'you need to stop!'
+//        break;
+//     case "yellow":
+//         lightMessage = 'slow down!'
+//         break;
+//     case "green":
+//         lightMessage = "you can go!"
+//         break;
+//     default:
+//         lightMessage = "proceed with caution!"
+//         break;
+// }
+// return lightMessage;
+// }
+// console.log(checkTrafficLight('green'))
 
 
 // ================ REVERSE ENGINEERING =================
