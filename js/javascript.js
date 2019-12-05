@@ -13,7 +13,6 @@ function animatedForm() {
            nextSlide(parent, nextForm);
        } else if (input.type === "password" && validatePassword(input)) {
            nextSlide(parent, nextForm);
-
        } else {
            parent.style.animation = "shake 0.5s ease";
 
@@ -61,7 +60,7 @@ function validateEmail(email) {
 var check = function() {
     if (document.getElementById('password').value ==
         document.getElementById('confirm_password').value) {
-       error('rgb(87, 189, 130)');
+      error('rgb(87, 189, 130)');
         return true;
     } else {
       error('rgb(255, 191, 0)');
