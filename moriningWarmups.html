@@ -112,7 +112,13 @@
             console.log(seeYouLater('crocodile'));
             console.log(seeYouLater('bye'));
 
+        function functionA(callBack) {
+            callBack();
+        }
 
+        functionA(function () {
+            alert('it works!')
+        });
 
         </script>
     </body>
