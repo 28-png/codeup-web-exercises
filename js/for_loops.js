@@ -13,10 +13,17 @@
 //
 // }
 
-for(var i = 1; i <= 9; i++) {
-
-console.log(i * 11)
-}
+// var output = "";
+// for( i = 1; i <= 9); i++) {
+//     for(var j = 0; j < i; j++) {
+//        if(i === 9 && j === i-1) {
+//             output += i
+//      } else {
+//             output += i
+//         }
+//     }
+// }
+// console.log(output)
 
 // for(var i = 100; i > 0; i--) {
 //     if(i % 5 === 0) {
