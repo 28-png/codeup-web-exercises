@@ -57,7 +57,4 @@
     console.log(num[1]);
     console.log(num[4]);
 
-
-
-
 })();
