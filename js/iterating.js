@@ -4,7 +4,7 @@
     /**
      * TODO:
      * Create an array of 4 people's names and store it in a variable called
-     * 'names'.
+    * 'names'.
      */
         var names = ['Matt', 'Sibe', 'Sherry', 'Marion']
     /**
@@ -49,15 +49,22 @@
      *
      * Example:
      *  > first([1, 2, 3, 4, 5]) // returns 1
-     *  > second([1, 2, 3, 4, 5]) // returns 2
+    *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
-    var num =[1, 2, 3, 4, 5]
-    console.log(num[0]);
-    console.log(num[1]);
-    console.log(num[4]);
+function first(names) {
+    return names[0];
+   }
+    console.log("The first name is " + first(names));
 
+function second(names) {
+    return names[1]
+}
+console.log("The second name is " + second(names))
 
-
+    function last(names) {
+    return names[names.length-1]
+    }
+    console.log("The last name is " + last(names))
 
 })();
