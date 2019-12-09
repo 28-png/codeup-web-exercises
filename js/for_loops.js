@@ -18,6 +18,14 @@ for(var i = 1; i <= 9; i++) {
 console.log(i * 11)
 }
 
+// for(var i = 100; i > 0; i--) {
+//     if(i % 5 === 0) {
+//         console.log(i);
+//    }
+// }
+
+
+
 
 
 
