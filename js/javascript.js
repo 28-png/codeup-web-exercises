@@ -12,7 +12,7 @@ function animatedForm() {
       } else if (input.type === "email" && validateEmail(input)) {
            nextSlide(parent, nextForm);
        } else if (input.type === "password" && validatePassword(input)) {
-           nextSlide(parent, nextForm);
+          nextSlide(parent, nextForm);
        } else {
            parent.style.animation = "shake 0.5s ease";
 
