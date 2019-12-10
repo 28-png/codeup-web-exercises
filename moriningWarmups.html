@@ -110,16 +110,21 @@
 
             console.log(seeYouLater('alligator'));
             console.log(seeYouLater('crocodile'));
-            console.log(seeYouLater('bye'));
+           console.log(seeYouLater('bye'));
 
-        function functionA(callBack) {
-            callBack();
-        }
-
-        functionA(function () {
-            alert('it works!')
-        });
-
+        // function functionA(callBack) {
+        //     callBack();
+        // }
+        //
+        // functionA(function () {
+        //     alert('it works!')
+        // });
+        var arr = ['cat', 'dog', 'mouse', 'fish', 'bird']
+            function contains(x) {
+               return arr.includes(x)
+            }
+console.log(contains('bird'))
+console.log(contains('flamingo'))
         </script>
     </body>
 </html>
