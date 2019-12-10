@@ -7,12 +7,12 @@ function animatedForm() {
        const parent = arrow.parentElement;
        const nextForm = parent.nextElementSibling;
 
-       if(input.type === "text" && validateUser(input)) {
+      if(input.type === "text" && validateUser(input)) { //string
            nextSlide(parent, nextForm);
       } else if (input.type === "email" && validateEmail(input)) {
            nextSlide(parent, nextForm);
        } else if (input.type === "password" && validatePassword(input)) {
-           nextSlide(parent, nextForm);
+          nextSlide(parent, nextForm);
        } else {
            parent.style.animation = "shake 0.5s ease";
 
@@ -67,9 +67,19 @@ var check = function() {
        return false;
     }
 }
+/*
+var grTable = new GlideRecord("test_table");
+grTable.addQuery("user_name", "unique_id");
+grTable.addQuery("password", "unique_id");
+grTable.query();
+grTable.update();
 
-
-
+if (password === "set_value"){
+    grTable.alert("this is a test");
+}else{
+   grTable.alert("this is not a legitmate password");
+   }
+*/
 function nextSlide(parent, nextForm) {
     parent.classList.add('inactive');
     parent.classList.remove('active');
