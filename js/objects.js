@@ -106,7 +106,9 @@ shoppers.forEach(function(x) {
      *      ---
      *      ...
      */
-
+books.forEach(function(book) {
+    console.log("Book # " + book.title + " " + book.authorFirstName + " " + book.authorLastName)
+})
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
