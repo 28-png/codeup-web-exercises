@@ -13,7 +13,7 @@
      */
     var person = {
         firstName: "Matt",
-        lastName: " Murphy"
+        lastName: "Murphy"
     };
     console.log(person.firstName);
     console.log(person.lastName);
@@ -27,7 +27,7 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
         person.sayHello = function () {
-            return 'Hello ' + person.firstName + person.lastName
+            return 'Hello ' + person.firstName + " "  + person.lastName
         }
     console.log(person.sayHello());
     /** TODO:
@@ -50,14 +50,36 @@
         {name: 'George', amount: 320}
     ];
 
-    shoppers.moreThan = function () {
-        if(shoppers.amount > 200) {
-            return (person.amount * .12) + person.amount;
-        } else {
-            return "no discount"
-        }
-    }
-    console.log(shoppers.moreThan());
+// shoppers.forEach(function(amount) {
+//            var discount = shoppers.amount - (shoppers.amount * .12)
+//        if(shoppers[0].amount  < 200) {
+//            console.log(shoppers[0].name + " gets no discount");
+//       } else {
+//            console.log(shoppers[0].name + " receives a discount of " + discount)
+//       }
+//     });
+//
+// shoppers.forEach(function(amount) {
+//     var discount = shoppers[1].amount - (shoppers[1].amount * .12)
+//        if(shoppers[1].amount < 200) {
+//           console.log(shoppers[1].name + " gets no discount");
+//        } else {
+//            console.log(shoppers[1].name + " receives a discount of " + discount)
+//        }
+//     });
+// shoppers.forEach(function(amount) {
+//     var discount = shoppers[2].amount - (shoppers[2].amount * .12)
+//        if(shoppers[2].amount < 200) {
+//            console.log(shoppers[2].name + " gets no discount");
+//        } else {
+//            console.log(shoppers[2].name + " receives a discount of " + discount)
+//        }
+//     });
+
+//solution
+
+
+
     /** TODO:
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
