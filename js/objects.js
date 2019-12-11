@@ -50,53 +50,17 @@
         {name: 'George', amount: 320}
     ];
 
-// shoppers.forEach(function(amount) {
-//            var discount = shoppers.amount - (shoppers.amount * .12)
-//          if(shoppers[0].amount  < 200) {
-//            console.log(shoppers[0].name + " gets no discount");
-//       } else {
-//            console.log(shoppers[0].name + " receives a discount of " + discount)
-//       }
-//     });
-//
-// shoppers.forEach(function(amount) {
-//     var discount = shoppers[1].amount - (shoppers[1].amount * .12)
-//        if(shoppers[1].amount < 200) {
-//           console.log(shoppers[1].name + " gets no discount");
-//        } else {
-//            console.log(shoppers[1].name + " receives a discount of " + discount)
-//        }
-//     });
-// shoppers.forEach(function(amount) {
-//     var discount = shoppers[2].amount - (shoppers[2].amount * .12)
-//        if(shoppers[2].amount < 200) {
-//            console.log(shoppers[2].name + " gets no discount");
-//        } else {
-//            console.log(shoppers[2].name + " receives a discount of " + discount)
-//        }
-//     });
-
 //solution
-shoppers.forEach(function(shopper) {
+shoppers.forEach(function(x) {
     var discount = 0
-    if (shopper.amount >= 200) {
-        discount = shopper.amount * .12;
-       var total = shopper.amount - discount
-    console.log(shopper.name + " bill was was $" + shopper.amount + ". They received a discount of " + discount + " and their total was " + total)
+    if (x.amount >= 200) {
+        discount = x.amount * .12;
+      var total = x.amount - discount
+    console.log(x.name + " bill was was $" + x.amount + ". They received a discount of " + discount + " and their total was " + total)
     } else {
-        console.log(shopper.name + " you do not get a discount")
+        console.log(x.name + " you do not get a discount")
     }
 })
-//     var i;
-//     for (i = 0; i < shoppers.length; i++) {
-//         shoppers.forEach(function () {
-//             if (shoppers[i].amount >= 200) {
-//               console.log("Hello, " + shoppers[i].name + ". Your total before the discount was $" + shoppers[i].amount + ". Your total after discount is $" + (shoppers[i].amount - (shoppers[i].amount * .12)))
-//             } else {
-//                 console.log("Hello, " + shoppers[i].name + ". Add $" + (200 -                        shoppers[i].amount) + " to your cart to qualify for discount")
-//             }
-//         })
-//     }
 
 
     /** TODO:
