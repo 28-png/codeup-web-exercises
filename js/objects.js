@@ -75,7 +75,13 @@ shoppers.forEach(function(x) {
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-
+    var books = [
+        {title: "Wild At Heart", authorFirstName: "John", authorLastName: "Eldridge"},
+        {title: "sherlock holmes", authorFirstName: "Author", authorLastName: "Doyle"},
+        {title: "Daniel Boone", authorFirstName: "John", authorLastName: "Faragher"},
+        {title: "Linux Bible", authorFirstName: "Christopher", authorLastName: "Negus"},
+        {title: "How Linux Works", authorFirstName: "Brian", authorLastName: "Ward"}
+    ];
     /**
      * TODO:
      * Loop through the books array and output the following information about
