@@ -122,4 +122,19 @@ console.log("-----------")
      *   `showBookInfo` function.
      */
 
+var createBook = function(title, firstName, lastName) {
+    var book = {};
+        book.title = title;
+    book.author = {}
+    book.author.authorFirstName = firstName
+    book.author.authorLastName = lastName
+return book;
+}
+books.push(createBook("Wild At Heart", "John", "Eldridge"))
+
+    books.forEach(function(book, i) {
+        console.log("Book # "+(i+1) + " \n " + "Title: " + book.title + " \n " + "Author: " + book.authorFirstName + " " + book.authorLastName)
+        console.log("-----------")
+    })
+
 })();
