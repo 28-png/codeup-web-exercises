@@ -121,7 +121,8 @@ console.log("-----------")
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-
+console.log("----------------------------------------")
+console.log("----------------------------------------")
 var createBook = function(title, firstName, lastName) {
     var book = {};
         book.title = title;
