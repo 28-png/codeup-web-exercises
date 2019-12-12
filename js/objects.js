@@ -106,8 +106,11 @@ shoppers.forEach(function(x) {
      *      ---
      *      ...
      */
+
 books.forEach(function(book) {
-    console.log("Book # " + book.title + " " + book.authorFirstName + " " + book.authorLastName)
+    for(var i = 1; i <= 5; i++) {
+        console.log("Book # " + [i] + " " + book.title + " " + book.authorFirstName + " " + book.authorLastName)
+    }
 })
     /**
      * Bonus:
