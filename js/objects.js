@@ -76,11 +76,11 @@ shoppers.forEach(function(x) {
      * > console.log(books[0].author.lastName) // "Adams"
      */
     var books = [
-        {number: 1, title: "Wild At Heart", authorFirstName: "John", authorLastName: "Eldridge"},
-        {number: 2, title: "sherlock holmes", authorFirstName: "Author", authorLastName: "Doyle"},
-       {number: 3, title: "Daniel Boone", authorFirstName: "John", authorLastName: "Faragher"},
-        {number: 4, title: "Linux Bible", authorFirstName: "Christopher", authorLastName: "Negus"},
-        {number: 5, title: "How Linux Works", authorFirstName: "Brian", authorLastName: "Ward"}
+        { title: "Wild At Heart", authorFirstName: "John", authorLastName: "Eldridge"},
+        { title: "sherlock holmes", authorFirstName: "Author", authorLastName: "Doyle"},
+        { title: "Daniel Boone", authorFirstName: "John", authorLastName: "Faragher"},
+        { title: "Linux Bible", authorFirstName: "Christopher", authorLastName: "Negus"},
+        { title: "How Linux Works", authorFirstName: "Brian", authorLastName: "Ward"}
     ];
     /**
      * TODO:
@@ -106,10 +106,10 @@ shoppers.forEach(function(x) {
      *      ---
      *      ...
      */
-
-books.forEach(function(book) {
-        console.log("Book # " + book.number + " \n " + "Title: " + book.title + " \n " + "Author: " + book.authorFirstName + " " + book.authorLastName)
-console.log("__________")
+var i = 1
+books.forEach(function(book, i) {
+        console.log("Book # "+(i+1) + " \n " + "Title: " + book.title + " \n " + "Author: " + book.authorFirstName + " " + book.authorLastName)
+console.log("-----------")
 })
     /**
      * Bonus:
