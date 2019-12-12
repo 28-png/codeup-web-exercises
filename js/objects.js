@@ -78,7 +78,7 @@ shoppers.forEach(function(x) {
     var books = [
         {number: 1, title: "Wild At Heart", authorFirstName: "John", authorLastName: "Eldridge"},
         {number: 2, title: "sherlock holmes", authorFirstName: "Author", authorLastName: "Doyle"},
-        {number: 3, title: "Daniel Boone", authorFirstName: "John", authorLastName: "Faragher"},
+       {number: 3, title: "Daniel Boone", authorFirstName: "John", authorLastName: "Faragher"},
         {number: 4, title: "Linux Bible", authorFirstName: "Christopher", authorLastName: "Negus"},
         {number: 5, title: "How Linux Works", authorFirstName: "Brian", authorLastName: "Ward"}
     ];
