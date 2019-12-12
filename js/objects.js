@@ -106,7 +106,7 @@ shoppers.forEach(function(x) {
      *      ---
      *      ...
      */
-var i = 1
+
 books.forEach(function(book, i) {
         console.log("Book # "+(i+1) + " \n " + "Title: " + book.title + " \n " + "Author: " + book.authorFirstName + " " + book.authorLastName)
 console.log("-----------")
