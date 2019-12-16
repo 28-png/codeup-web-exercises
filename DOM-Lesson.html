@@ -21,9 +21,12 @@ var header = document.getElementById("header")
     console.log(header)
     var evens = document.getElementsByClassName("even")
     console.log("evens"+evens)
-    for (var i = 0; i < evens.length; i++) {
-        console.log(evens[i]);
-    }
+    setTimeout(function() {
+        for (var i = 0; i < evens.length; i++) {
+            evens[i].innerHTML = "<em>Money</em>"
+            console.log(evens[i].innerHTML);
+        }
+    }, 7000)
 </script>
 </body>
 </html>
