@@ -16,7 +16,14 @@
     <li class="even">6</li>
 </ul>
 <script>
-
+    console.log(document)
+var header = document.getElementById("header")
+    console.log(header)
+    var evens = document.getElementsByClassName("even")
+    console.log("evens"+evens)
+    for (var i = 0; i < evens.length; i++) {
+        console.log(evens[i]);
+    }
 </script>
 </body>
 </html>
