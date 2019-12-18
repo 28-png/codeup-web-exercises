@@ -34,7 +34,31 @@ function filterNumbers(input) {
 console.log(filterNumbers(["fred", true, 5, 3]));
 
 // 2. Write a function, `getOlder()` that takes in array of dog objects and increases the value of the age properties by 1.
-//
+var dogs = [
+        {
+             name: "Chompers",
+             breed: "Pug",
+             age: 7
+         },
+         {
+             name: "Freddy",
+             breed: "Lab",
+             age: 4
+         },
+         {
+             name: "Mr. Pig",
+             breed: "Mastif",
+             age: 10
+         }
+     ];
+dogs.forEach(function(dog) {
+    var agePlusOne =  dog.age+=1
+    console.log("name: " + dog.name + "\n" + "breed: " + dog.breed + "\n" + "age: " + agePlusOne);
+})
+
+
+
+
 //     ```js
 //     //Example Input:
 //
@@ -76,7 +100,60 @@ console.log(filterNumbers(["fred", true, 5, 3]));
 //          }
 //      ];
 
+// 3. Write a function, `washCars()` that takes in a array of car objects and sets the boolean properties of isDirty to false
 
+function washCars() {
+
+}
+
+
+//     ```js
+//             // Example input
+//             [
+//                  {
+//                      make: 'Volvo',
+//                      color: 'red',
+//                      year: 1996,
+//                      isDirty: true
+//                  },
+//                  {
+//                      make: 'Toyota',
+//                      color: 'black',
+//                      year: 2004,
+//                      isDirty: false
+//                  },
+//                  {
+//                      make: 'Ford',
+//                      color: 'white',
+//                      year: 2007,
+//                      isDirty: true
+//                  }
+//             ]
+//       ```
+//
+//     ```js
+//             // Example output:
+//              [
+//                  {
+//                      make: 'Volvo',
+//                      color: 'red',
+//                      year: 1996,
+//                      isDirty: false // changed to false
+//                  },
+//                  {
+//                      make: 'Toyota',
+//                      color: 'black',
+//                      year: 2004,
+//                      isDirty: false // stays the same
+//                  },
+//                  {
+//                      make: 'Ford',
+//                      color: 'white',
+//                      year: 2007,
+//                      isDirty: false // changed to false
+//                  }
+//              ]
+//     ```
 
 
 
