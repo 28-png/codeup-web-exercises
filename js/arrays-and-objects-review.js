@@ -1,3 +1,6 @@
+"use strict"
+
+
 // 1. What is an array in Javascript?
 //
 //     2. What is an object in Javascript?
@@ -18,8 +21,60 @@
 //     ```js
 //         filterNumbers(["fred", true, 5, 3]) //[3, 5]
 
+function filterNumbers(input) {
+    var bucket = []
+    for (var i = 0; i < input.length; i++) {
+        if(typeof input[i] === "number") {
+             bucket.push(input[i])
+       }
+    }
+        return bucket.sort()
+}
 
+console.log(filterNumbers(["fred", true, 5, 3]));
 
+// 2. Write a function, `getOlder()` that takes in array of dog objects and increases the value of the age properties by 1.
+//
+//     ```js
+//     //Example Input:
+//
+//        [
+//         {
+//              name: "Chompers",
+//              breed: "Pug",
+//              age: 7
+//          },
+//          {
+//              name: "Freddy",
+//              breed: "Lab",
+//              age: 4
+//          },
+//          {
+//              name: "Mr. Pig",
+//              breed: "Mastif",
+//              age: 10
+//          }
+//      ];
+//    ```
+//     ```js
+//     //Example output
+//      [
+//         {
+//              name: "Chompers",
+//              breed: "Pug",
+//              age: 8
+//          },
+//          {
+//              name: "Freddy",
+//              breed: "Lab",
+//              age: 5
+//          },
+//          {
+//              name: "Mr. Pig",
+//              breed: "Mastif",
+//              age: 11
+//          }
+//      ];
 
 
 
