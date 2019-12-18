@@ -5,8 +5,8 @@ mapboxgl.accessToken = mapboxToken;
 var mapOptions = new mapboxgl.Map({
     container: 'map',
   style: 'mapbox://styles/mapbox/dark-v10',
-   zoom: 15,
-    center: [-98.654406, 29.435944],
+   zoom: 11,
+    center: [-98.4951, 29.4246],
 });
 
 
@@ -21,7 +21,7 @@ function geocode(search, token) {
     return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
         .then(function(res) {
            return res.json();
-            // to get all the data from the request, comment out the following three lines...
+           // to get all the data from the request, comment out the following three lines...
         }).then(function(data) {
             return data.features[0].center;
         });
@@ -77,17 +77,11 @@ marker3.setPopup(popup3)
 
 
 
-geocode("Chuy's, North Interstate 35, San Marcos, TX", mapboxToken).then(function(results) {
+geocode("San Antonio, Texas", mapboxToken).then(function(results) {
      console.log(results);
   });
 
-geocode("Chick-fil-A, 4110 S New Braunfels Ave, San Antonio, TX 78223", mapboxToken).then(function(results) {
-     console.log(results);
-  });
 
-geocode("Texas Roadhouse, 2751 SE Military Dr, San Antonio, TX 78223", mapboxToken).then(function(results) {
-     console.log(results);
-  });
 
 
 
