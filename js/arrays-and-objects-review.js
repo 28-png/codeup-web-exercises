@@ -21,20 +21,35 @@
 //     ```js
 //         filterNumbers(["fred", true, 5, 3]) //[3, 5]
 
-function filterNumbers(input) {
-    var bucket = []
-    for (var i = 0; i < input.length; i++) {
-        if(typeof input[i] === "number") {
-             bucket.push(input[i])
-       }
+// function filterNumbers(input) {
+//     var bucket = []
+//     for (var i = 0; i < input.length; i++) {
+//         if(typeof input[i] === "number") {
+//              bucket.push(input[i])
+//        }
+//     }
+//         return bucket.sort()
+// }
+//
+
+//solution
+function filterNumbers(inputArray) {
+var numberBucket = [];
+inputArray.forEach(function(item) {
+    if(typeof item === "number") {
+        numberBucket.push(item)
     }
-        return bucket.sort()
+})
+
+return numberBucket.sort(function (a, b) {
+    return a -b;
+})
+
 }
-
 console.log(filterNumbers(["fred", true, 5, 3]));
-
+console.log(filterNumbers(["fred", true, 50, 100, 100000, 3, 500000]));
 // 2. Write a function, `getOlder()` that takes in array of dog objects and increases the value of the age properties by 1.
-var dogs = [
+var dogsList = [
         {
              name: "Chompers",
              breed: "Pug",
@@ -51,12 +66,21 @@ var dogs = [
              age: 10
          }
      ];
-dogs.forEach(function(dog) {
-    var agePlusOne =  dog.age+=1
-    console.log("name: " + dog.name + "\n" + "breed: " + dog.breed + "\n" + "age: " + agePlusOne);
-})
+// dogs.forEach(function(dog) {
+//     var agePlusOne =  dog.age+=1
+//     console.log("name: " + dog.name + "\n" + "breed: " + dog.breed + "\n" + "age: " + agePlusOne);
+// })
 
+//solution
+function getOlder(dogs) {
+    dogs.forEach(function (dog) {
+        dog.age += 1;
+    });
 
+    return dogs
+}
+
+console.log(getOlder(dogsList));
 
 
 //     ```js
@@ -101,10 +125,45 @@ dogs.forEach(function(dog) {
 //      ];
 
 // 3. Write a function, `washCars()` that takes in a array of car objects and sets the boolean properties of isDirty to false
+  var carList =  [
+                 {
+                     make: 'Volvo',
+                     color: 'red',
+                     year: 1996,
+                     isDirty: true
+                 },
+                 {
+                     make: 'Toyota',
+                     color: 'black',
+                     year: 2004,
+                     isDirty: false
+                 },
+                 {
+                     make: 'Ford',
+                     color: 'white',
+                     year: 2007,
+                     isDirty: true
+                 }
+            ];
 
-function washCars() {
 
+// cars.forEach(function (car) {
+//     if(typeof car.isDirty === 'boolean') {
+//         return false;
+//     } else {
+//         return false;
+//     }
+//
+// });
+
+//solution
+function washCars(cars) {
+    cars.forEach(function (car) {
+      car.isDirty = false;
+    });
+    return cars
 }
+console.log(washCars(carList));
 
 
 //     ```js
@@ -155,9 +214,166 @@ function washCars() {
 //              ]
 //     ```
 
+// 4. Write a function, `adminList()` that takes in an array of user objects and returns a count of all admins based on the isAdmin property. Refactor to return an array of admin-only user emails. Refactor again to return an array of user objects that are admins.
+//     ```js
+//          //Example Input:
+//           [
+//              {
+//                  isAdmin: true,
+//                  email: 'user1@email.com'
+//              },
+//              {
+//                  isAdmin: true,
+//                  email: 'user2@email.com'
+//              },
+//              {
+//                  isAdmin: false,
+//                  email: 'user3@email.com'
+//              }
+//          ];
+//     ```
+//
+//     ```js
+//        // Example Output (before refactor): 2
+//
+//
+//         // Example Output (after 1st refactor):
+//         [
+//             'user1@email.com',
+//             'user2@email.com'
+//         ]
+//
+//
+//         // Example Output (after 2nd refactor):
+//         [
+//              {
+//                  isAdmin: true,
+//                  email: 'user1@email.com'
+//              },
+//              {
+//                  isAdmin: true,
+//                  email: 'user2@email.com'
+//              }
+//          ]
+//
+//     ```
+
+var userList = [
+             {
+                 isAdmin: true,
+                 email: 'user1@email.com'
+             },
+             {
+                 isAdmin: true,
+                 email: 'user2@email.com'
+             },
+             {
+                 isAdmin: false,
+                 email: 'user3@email.com'
+             }
+         ];
+// solution
+//part one
+// function adminList(users) {
+// var totalAdmin = 0;
+// users.forEach(function(user) {
+//     if(user.isAdmin) {
+//         totalAdmin += 1
+//     }
+// });
+//     return totalAdmin;
+// }
+//part two
+// function adminList(users) {
+//     var bucket = [];
+//     users.forEach(function(user) {
+//        if(user.isAdmin) {
+//             bucket.push(user.email)
+//         }
+//     });
+//     return bucket
+// }
+//part three
+function adminList(users) {
+var adminBucket = [];
+users.forEach(function(user) {
+    if(user.isAdmin) {
+        adminBucket.push(user)
+    }
+})
+    return adminBucket
+}
+
+console.log(adminList(userList));
 
 
+// 5. Create a function, `makeSandwichObjects()` that takes in two array of strings, breads and fillings and returns an array of sandwichObjects that contain properties for bread and filling and values correspond to the same order of the two passed in arrays. Assume the two array inputs are the same length.
+//
+//     ```js
+//         //     Example Input:
+//
+//          var breads  = [
+//              "white",
+//              "wheat",
+//              "rhy",
+//              "white"
+//          ];
+//
+//          var fillings = [
+//              "pb&j",
+//              "ham",
+//              "cheese steak",
+//              "tuna"
+//          ];
+//
+//          makeSandwichObjects(breads, fillings) // example call to the function
+//     ```
+//     ```js
+//         // Example Output:
+//            [
+//              {
+//                  bread: "white",
+//                  filling: "pb&j"
+//              },
+//              {
+//                  bread: "wheat",
+//                  filling: "ham"
+//              },
+//              {
+//                  bread: "rhy",
+//                  filling: "cheese steak"
+//              },
+//              {
+//                  bread: "white",
+//                  filling: "tuna"
+//              }
+//          ]
+//
+//     ```
+var breadList  = [
+             "white",
+             "wheat",
+            "rhy",
+             "white"
+         ];
 
+         var fillingList = [
+             "pb&j",
+             "ham",
+             "cheese steak",
+             "tuna"
+         ];
+//solution
+function makeSandwichObjects(breads, fillings) {
+    var sandwichBucket = [];
+    for(var i = 0; i < breads.length; i++) {
+        var sandwichObject = {
+            bread: breads[i],
+            filling: fillings[i]
+        }
+        sandwichBucket.push(sandwichObject)
+    }
+    return sandwichBucket;
+}
 
-
-
+console.log(makeSandwichObjects(breadList, fillingList));
