@@ -125,11 +125,11 @@ console.log("-----------")
 console.log("----------------------------------------")
     console.log("         Bonus Exercise             ")
 console.log("----------------------------------------")
-    console.log("                                    ")
+   console.log("                                    ")
 var createBook = function(title, firstName, lastName) {
     var book = {};
         book.title = title;
-    book.author = {}
+   book.author = {}
     book.author.authorFirstName = firstName
     book.author.authorLastName = lastName
 return book;

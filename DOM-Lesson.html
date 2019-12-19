@@ -5,28 +5,54 @@
     <title>DOM</title>
 </head>
 <body>
-<h1 id="header">Happy Holidays</h1>
-<h3>Wish List</h3>
-<ul>
-    <li>1</li>
-    <li class="even">2</li>
-    <li>3</li>
-    <li class="even">4</li>
-    <li>5</li>
-    <li class="even">6</li>
-</ul>
+<!--<h1 id="header">Happy Holidays</h1>-->
+<!--<h3>Wish List</h3>-->
+<!--<ul>-->
+<!--    <li>1</li>-->
+<!--    <li class="even">2</li>-->
+<!--    <li>3</li>-->
+<!--    <li class="even">4</li>-->
+<!--    <li>5</li>-->
+<!--    <li class="even">6</li>-->
+<!--</ul>-->
+<!--<script>-->
+<!--    console.log(document)-->
+<!--var header = document.getElementById("header")-->
+<!--    console.log(header)-->
+<!--    var evens = document.getElementsByClassName("even")-->
+<!--    console.log("evens"+evens)-->
+<!--    setTimeout(function() {-->
+<!--        for (var i = 0; i < evens.length; i++) {-->
+<!--            evens[i].innerHTML = "<em>Money</em>"-->
+<!--           console.log(evens[i].innerHTML);-->
+<!--        }-->
+<!--    }, 7000)-->
+<!--</script>-->
+
+
+<button id="btn1">Click Me!</button>
+<button id="btn2">Remove Event Listener</button>
 <script>
-    console.log(document)
-var header = document.getElementById("header")
-    console.log(header)
-    var evens = document.getElementsByClassName("even")
-    console.log("evens"+evens)
-    setTimeout(function() {
-        for (var i = 0; i < evens.length; i++) {
-            evens[i].innerHTML = "<em>Money</em>"
-            console.log(evens[i].innerHTML);
-        }
-    }, 7000)
+    'use strict';
+
+    var listener = function (event) {
+        alert('You clicked the button!');
+    }
+
+    // add event listener to btn1
+    var btn1 = document.getElementById('btn1');
+    btn1.addEventListener('click', listener, false);
+
+    var remover = function (event) {
+        // remove event listener from btn1
+        btn1.removeEventListener('click', listener, false);
+        console.log('Event listener removed.');
+    }
+
+    // add event listener to btn2
+    var btn2 = document.getElementById('btn2');
+    btn2.addEventListener('click', remover, false);
+
 </script>
 </body>
 </html>
