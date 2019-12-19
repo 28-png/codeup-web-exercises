@@ -362,18 +362,36 @@ var breadList  = [
              "ham",
              "cheese steak",
              "tuna"
-         ];
+        ];
 //solution
-function makeSandwichObjects(breads, fillings) {
-    var sandwichBucket = [];
-    for(var i = 0; i < breads.length; i++) {
-        var sandwichObject = {
-            bread: breads[i],
-            filling: fillings[i]
+// function makeSandwichObjects(breads, fillings) {
+//     var sandwichBucket = [];
+//     for(var i = 0; i < breads.length; i++) {
+//         var sandwichObject = {
+//             bread: breads[i],
+//             filling: fillings[i]
+//         }
+//         sandwichBucket.push(sandwichObject)
+//     }
+//     return sandwichBucket;
+// }
+//
+// console.log(makeSandwichObjects(breadList, fillingList));
+
+
+// TODO Write a function named keepYellow that accepts an array of strings and returns an array with all the strings that are equal to "yellow"
+// solution
+function keepYellow(strings) {
+    var yellowBucket = []
+    strings.forEach(function (str) {
+        if(str === "yellow") {
+            yellowBucket.push(str)
         }
-        sandwichBucket.push(sandwichObject)
-    }
-    return sandwichBucket;
+    });
+
+    return yellowBucket
 }
 
-console.log(makeSandwichObjects(breadList, fillingList));
+
+
+console.log(keepYellow(["yellow", "red", "blue", "yellow", "black", "brown", "yellow"]));
