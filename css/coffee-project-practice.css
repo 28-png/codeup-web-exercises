@@ -1,0 +1,42 @@
+/*body {*/
+/*    background-color: lightsalmon;*/
+/*}*/
+
+body {
+    background: url(../.idea/img/nic-cage-background4.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/*table {*/
+/*    border-collapse: collapse;*/
+/*    margin: 15px 0;*/
+/*}*/
+
+.move {
+
+}
+
+#searchbar {
+    width: 30%;
+    height: 20px;
+}
+
+#roast-selection {
+    color: grey;
+}
+
+form {
+    text-align:center;
+    margin-top: 5%;
+}
+
+/*.backgroundColor {*/
+/*    margin: 0;*/
+/*    background-color: grey;*/
+/*    height: 100px;*/
+/*}*/
+
+
