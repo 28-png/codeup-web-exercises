@@ -1,12 +1,23 @@
-var circle = {
-    radius: 1,
-    locations: {
-        x: 1,
-        y: 1
-    },
-    draw: function () {
+
+// Factory Function
+function createCircle(radius) {
+    return {
+    radius: radius,
+        draw: function () {
         console.log('draw')
     }
 };
+}
 
-circle.draw();
+var circle = createCircle(1);
+
+//Constructor Function
+
+function Circle(radius) {
+    this.radius = radius;
+    this.draw = function() {
+        console.log('draw')
+    }
+}
+
+var another = new Circle(1);
