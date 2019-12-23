@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
@@ -32,9 +32,9 @@ function updateCoffees(e) {
 }
 
 function search_coffee() {
-    let input = document.getElementById('searchbar').value;
+    var input = document.getElementById('searchbar').value;
     input=input.toLowerCase();
-    let x = document.getElementsByClassName('coffee');
+    var x = document.getElementsByClassName('coffee');
     for (var i = 0; i < x.length; i++) {
         if (!x[i].innerHTML.toLowerCase().includes(input)) {
             x[i].style.display="none";
@@ -45,16 +45,6 @@ function search_coffee() {
     }
 }
 
-
-
-
-
-
-
-
-
-
-// from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
     {id: 1, name: 'National Treasure 2 Light City', roast: 'light', allRoast: "all roast" },
     {id: 2, name: 'National Treasure Half City', roast: 'light', allRoast: "all roast" },
@@ -76,9 +66,6 @@ var coffees = [
 var pList = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
-
-
-// tbody.innerHTML = renderCoffees(coffees);
 
 roastSelection.addEventListener('click', updateCoffees);
 submitButton.addEventListener('click', updateCoffees);
