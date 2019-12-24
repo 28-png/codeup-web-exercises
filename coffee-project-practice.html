@@ -18,16 +18,18 @@
     <div class="card border-0 rounded-pill shadow my-5 bg-info">
         <div class="card-body p-5">
             <form>
-                <label for="roast-selection"></label>
+                <label for="roast-selection">Select your Favorite Nic Roast</label>
+                <br>
                 <select id="roast-selection">
                     <option>all roast</option>
                     <option>light</option>
-                    <option>medium</option>
+                   <option>medium</option>
                     <option>dark</option>
                 </select>
-                <input id="submit" type="submit" value="Submit Roast"/>
+
                 <!--        <label for="searchbar">Roast</label>-->
                <input id="searchbar" type="text" name="coffee" onkeyup="search_coffee()" placeholder="Search coffee...">
+                <input id="submit" type="submit" value="Submit Roast"/>
             </form>
             <center><p id="coffees"></p></center>
 
