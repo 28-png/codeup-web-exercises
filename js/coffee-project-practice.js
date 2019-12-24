@@ -25,7 +25,7 @@ function updateCoffees(e) {
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
-        } else if(coffee.roast === )
+        } else if(coffee.all === selectedRoast)
             filteredCoffees.push(coffee);
     });
     pList.innerHTML = renderCoffees(filteredCoffees);
@@ -45,6 +45,7 @@ function search_coffee() {
     }
 }
 
+
 var coffees = [
     {id: 1, name: 'National Treasure 2 Light City', roast: 'light' },
     {id: 2, name: 'National Treasure Half City', roast: 'light' },
@@ -59,7 +60,7 @@ var coffees = [
     {id: 11, name: 'World Trade Center Espresso', roast: 'dark' },
     {id: 12, name: 'Bangkok Dangerous Viennese', roast: 'dark' },
     {id: 13, name: 'Grindhouse Italian', roast: 'dark' },
-    {id: 14, name: 'The French Family Man', roast: 'dark'},
+    {id: 14, name: 'The French Family Man', roast: 'dark'}
 ];
 
 
