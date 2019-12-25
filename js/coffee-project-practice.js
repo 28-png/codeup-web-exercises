@@ -25,7 +25,7 @@ function updateCoffees(e) {
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
-        } else if(coffee.all === selectedRoast)
+        } else if (coffee.roast === selectedRoast)
             filteredCoffees.push(coffee);
     });
     pList.innerHTML = renderCoffees(filteredCoffees);
