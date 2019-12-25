@@ -20,17 +20,20 @@
             <form>
                 <h3>Select your favorite Nic Roast</h3>
                 <select id="roast-selection">
-                   <option value="all roast">all roast</option>
-                    <option value="light">light</option>
-                   <option value="medium">medium</option>
-                    <option value="dark">dark</option>
+                   <option>all roast</option>
+                    <option>light</option>
+                   <option>medium</option>
+                    <option>dark</option>
                 </select>
 
                 <!--        <label for="searchbar">Roast</label>-->
                <input id="searchbar" type="text" name="coffee" onkeyup="search_coffee()" placeholder="Search coffee...">
                 <input id="submit" type="submit" value="Submit Roast"/>
+                <h3>Add Roast Here</h3>
+                <input type="text" name="addRoast" placeholder="Add Roast">
+                <input type="submit" value="Add Roast">
             </form>
-            <center><p id="coffees"></p></center>
+            <p id="coffees"></p>
 
             <p id="coffeeList"></p>
             <script src="js/coffee-project-practice.js"></script>
