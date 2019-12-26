@@ -44,6 +44,10 @@ function search_coffee() {
     }
 }
 
+function addCoffee() {
+    var add = document.getElementById('addCoffee')
+}
+
 
 var coffees = [
     {id: 1, name: 'National Treasure 2 Light City', roast: 'light' },
