@@ -45,19 +45,19 @@ function search_coffee() {
 }
 
 function addCoffee() {
-    var coffee = document.getElementById('addCoffee').value;
+    var coffee = document.getElementById('addCoffees').value;
     coffees.push(coffee);
     renderCoffees2();
     document.getElementById('coffee').value = "";
 }
 
 function renderCoffees2() {
-var coffeeString = "";
+var html = "";
 coffees.forEach(function(coffee) {
-    coffeeString += '<h1>' + coffee.name + '</h1>';
-    coffeeString += '<p>' + coffee.roast + '</p>'
+    html += '<h1>' + coffee.name + '</h1>';
+    html += '<p>' + coffee.roast + '</p>'
         });
-       pList.innerHTML = coffeeString;
+       pList.innerHTML = html;
     }
 
 
