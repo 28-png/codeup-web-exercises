@@ -45,8 +45,20 @@ function search_coffee() {
 }
 
 function addCoffee() {
-    var add = document.getElementById('addCoffee')
+    var coffee = document.getElementById('addCoffee').value;
+    coffees.push(coffee);
+    renderCoffees2();
+    document.getElementById('coffee').value = "";
 }
+
+function renderCoffees2() {
+var coffeeString = "";
+coffees.forEach(function(coffee) {
+    coffeeString += '<h1>' + coffee.name + '</h1>';
+    coffeeString += '<p>' + coffee.roast + '</p>'
+        });
+        document.getElementById('coffees').innerHTML = coffeeString;
+    }
 
 
 var coffees = [
@@ -74,4 +86,4 @@ var addRoast = document.querySelector('#button');
 
 roastSelection.addEventListener('click', updateCoffees);
 submitButton.addEventListener('click', updateCoffees);
-addRoast.addEventListener('click');
+addRoast.addEventListener('click', addCoffee);
