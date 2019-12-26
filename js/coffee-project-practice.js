@@ -66,6 +66,8 @@ var coffees = [
 var pList = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
+var addRoast = document.querySelector('#button');
 
 roastSelection.addEventListener('click', updateCoffees);
 submitButton.addEventListener('click', updateCoffees);
+addRoast.addEventListener('click');
