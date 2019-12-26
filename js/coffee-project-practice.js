@@ -57,7 +57,7 @@ coffees.forEach(function(coffee) {
     coffeeString += '<h1>' + coffee.name + '</h1>';
     coffeeString += '<p>' + coffee.roast + '</p>'
         });
-        document.getElementById('coffees').innerHTML = coffeeString;
+       pList.innerHTML = coffeeString;
     }
 
 
