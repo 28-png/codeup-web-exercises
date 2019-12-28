@@ -54,11 +54,12 @@ function addCoffee() {
 function renderCoffees2() {
 var html = "";
 coffees.forEach(function(coffee) {
-    html += '<h1>' + coffee.name + '</h1>';
+    html += '<h1>' + coffee + '</h1>';
     html += '<p>' + coffee.roast + '</p>'
-        });
+       });
        pList.innerHTML = html;
     }
+
 
 
 var coffees = [
