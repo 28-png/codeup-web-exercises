@@ -5,7 +5,6 @@ function renderCoffee(coffee) {
     html += '<h1>' + coffee.name + '</h1>';
     html += '<p>' + coffee.roast + '</p>';
     html += '</div>';
-
     return html;
 }
 
@@ -59,8 +58,6 @@ coffees.forEach(function(coffee) {
        });
        pList.innerHTML = html;
     }
-
-
 
 var coffees = [
     {id: 1, name: 'National Treasure 2 Light City', roast: 'light' },
