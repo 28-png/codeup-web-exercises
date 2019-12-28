@@ -55,7 +55,7 @@ var html = "";
 coffees.forEach(function(coffee) {
     html += '<h1>' + coffee + '</h1>';
     html += '<p>' + coffee.roast + '</p>'
-       });
+      });
        pList.innerHTML = html;
     }
 
