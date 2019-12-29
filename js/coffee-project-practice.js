@@ -3,7 +3,7 @@
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
     html += '<h1>' + coffee.name + '</h1>';
-    html += '<p>' + coffee.roast + '</p>';
+   html += '<p>' + coffee.roast + '</p>';
     html += '</div>';
     return html;
 }
@@ -47,11 +47,11 @@ function addCoffee() {
     var coffee = document.getElementById('addCoffees').value;
     coffees.push(coffee);
     renderCoffees2();
-    document.getElementById('coffee').value = "";
+    document.getElementById('coffee').value = '';
 }
 
 function renderCoffees2() {
-var html = "";
+var html = '';
 coffees.forEach(function(coffee) {
     html += '<h1>' + coffee + '</h1>';
     html += '<p>' + coffee.roast + '</p>'
@@ -75,7 +75,6 @@ var coffees = [
     {id: 13, name: 'Grindhouse Italian', roast: 'dark' },
     {id: 14, name: 'The French Family Man', roast: 'dark'}
 ];
-
 
 var pList = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
