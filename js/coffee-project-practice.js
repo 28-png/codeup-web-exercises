@@ -45,9 +45,9 @@ function search_coffee() {
 
 function addCoffee() {
     var coffee = document.getElementById('addCoffees').value;
+    document.getElementById('coffee');
     coffees.push(coffee);
     renderCoffees2();
-    document.getElementById('coffee').value = '';
 }
 
 function renderCoffees2() {
@@ -56,7 +56,7 @@ coffees.forEach(function(coffee) {
     html += '<h1>' + coffee + '</h1>';
     html += '<p>' + coffee.roast + '</p>'
       });
-       pList.innerHTML = html;
+    pList.innerHTML = html;
     }
 
 var coffees = [
