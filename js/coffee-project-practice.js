@@ -44,17 +44,18 @@ function search_coffee() {
 }
 
 function addCoffee() {
-    var coffee = document.getElementById('addCoffees').value;
+    var coffee2 = document.getElementById('addCoffees').value;
     document.getElementById('coffee');
-    coffees.push(coffee);
+    coffees.push(coffee2);
     renderCoffees2();
 }
 
 function renderCoffees2() {
+    var roast2 = document.getElementById('roast-selection2').value;
 var html = '';
-coffees.forEach(function(coffee) {
-    html += '<h1>' + coffee + '</h1>';
-    html += '<p>' + coffee.roast + '</p>'
+coffees.forEach(function(coffee2) {
+    html += '<h1>' + coffee2 + '</h1>';
+    html += '<p>' + roast2 + '</p>'
       });
     pList.innerHTML = html;
     }
