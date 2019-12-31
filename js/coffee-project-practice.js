@@ -36,7 +36,7 @@ function search_coffee() {
     var x = document.getElementsByClassName('coffee');
     for (var i = 0; i < x.length; i++) {
         if (!x[i].innerHTML.toLowerCase().includes(input)) {
-            x[i].style.display="none";
+           x[i].style.display="none";
         }
         else {
             x[i].style.display="list-item";
@@ -45,21 +45,14 @@ function search_coffee() {
 }
 
 
-function addCoffee() {
-    var coffee = document.getElementById('addCoffees').value;
-    coffees.push(coffee);
-    renderCoffees2();
+function addCoffee(inputName, roastType) {
+    var addNewCoffee = {id: coffees.length + 1, name: inputName, roast: roastType};
+    coffees.push(addNewCoffee);
+    localStorage.setItem("coffees", JSON.stringify(coffees));
+
 }
 
-function renderCoffees2() {
-    var roast = document.getElementById('roast-selection2').value;
-var html = '';
-coffees.forEach(function(coffee) {
-    html += '<h1>' + coffee + '</h1>';
-    html += '<p>' + roast + '</p>';
-      });
-    pList.innerHTML = html;
-    }
+
 
 var coffees = [
     {id: 1, name: 'National Treasure 2 Light City', roast: 'light' },
@@ -78,11 +71,24 @@ var coffees = [
     {id: 14, name: 'The French Family Man', roast: 'dark'}
 ];
 
+
+var addRoast = document.querySelector('#button');
+addRoast.addEventListener('click', function() {
+    var coffeeName = document.getElementById('addCoffees');
+    var coffeeRoast = document.getElementById('roast-selection2');
+    if(coffeeName.value !== '') {
+        addCoffee(coffeeName.value, coffeeRoast.value);
+        updateCoffees();
+    }
+    coffeeName.value = '';
+});
+
+
+
+
 var pList = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
-var addRoast = document.querySelector('#button');
 
 roastSelection.addEventListener('click', updateCoffees);
 submitButton.addEventListener('click', updateCoffees);
-addRoast.addEventListener('click', addCoffee);
