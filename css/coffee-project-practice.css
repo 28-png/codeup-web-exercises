@@ -16,6 +16,10 @@ body {
     width: 30%;
 }
 
+#removeCoffees {
+    width: 30%;
+}
+
 #roast-selection {
     color: grey;
 }

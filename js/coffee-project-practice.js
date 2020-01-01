@@ -16,36 +16,20 @@ function renderCoffees(coffees) {
     return html;
 }
 
-function updateCoffees(e) {
-    e.preventDefault();
-    var selectedRoast = roastSelection.value;
+var coffeeList = document.getElementById('coffees');
+
+function updateCoffees() {
     var filteredCoffees = [];
     coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast) {
-           filteredCoffees.push(coffee);
-        } else if ('all roast' === selectedRoast)
-            filteredCoffees.push(coffee);
-
+        if(coffee.roast === selectedRoast || selectedRoast === 'all roast') {
+            if(coffee.name.toLowerCase().includes(selectCoffee.toLowerCase())) {
+                filteredCoffees.push(coffee);
+            }
+        }
     });
-    pList.innerHTML = renderCoffees(filteredCoffees);
+    coffeeList.innerHTML = renderCoffees(filteredCoffees)
 }
 
-function search_coffee() {
-    var input = document.getElementById('searchbar').value;
-    input=input.toLowerCase();
-    var x = document.getElementsByClassName('coffee');
-    for (var i = 0; i < x.length; i++) {
-        if (!x[i].innerHTML.toLowerCase().includes(input)) {
-           x[i].style.display="none";
-        }
-        else {
-            x[i].style.display="list-item";
-        }
-    }
-}
-
-
-var coffeeList = document.getElementById('coffees');
 function addCoffee(inputName, roastType) {
     var addNewCoffee = {id: coffees.length + 1, name: inputName, roast: roastType};
     coffees.push(addNewCoffee);
@@ -53,14 +37,15 @@ function addCoffee(inputName, roastType) {
 
 }
 
-if(localStorage.getItem("coffees") !== null) {
-    coffees = localStorage.getItem("coffees");
-    coffees = JSON.parse(coffees);
-    coffeeList.innerHTML = renderCoffees(coffees);
-} else {
-    coffeeList.innerHTML = renderCoffees(coffees);
-
+function removeCoffees(coffeeInput) {
+    coffees.forEach(function(coffee) {
+       if(coffee.name.toLowerCase() === coffeeInput.toLowerCase()) {
+           coffees.splice(coffees.indexOf(coffee), 1);
+       }
+       localStorage.setItem("coffees", JSON.stringify(coffees));
+    });
 }
+
 
 
 var coffees = [
@@ -80,6 +65,20 @@ var coffees = [
     {id: 14, name: 'The French Family Man', roast: 'dark'}
 ];
 
+var selectedRoast = 'all roast';
+var roastSelection = document.querySelector('#roast-selection');
+roastSelection.addEventListener('change', function() {
+    selectedRoast = roastSelection.value;
+    updateCoffees()
+});
+
+var selectCoffee = '';
+var searchCoffee = document.getElementById('searchbar');
+searchCoffee.addEventListener('keyup', function() {
+   selectCoffee = searchCoffee.value;
+   updateCoffees();
+});
+
 
 var addRoast = document.querySelector('#button');
 addRoast.addEventListener('click', function() {
@@ -92,11 +91,29 @@ addRoast.addEventListener('click', function() {
     coffeeName.value = '';
 });
 
+var removeCoffee = document.querySelector('#button2');
+removeCoffee.addEventListener('click', function() {
+var removeCoffeeInput = document.getElementById('removeCoffees');
+if(removeCoffeeInput.value !== '') {
+    removeCoffees(removeCoffeeInput.value);
+    updateCoffees()
+}
+removeCoffeeInput.value = '';
+});
 
 
-var pList = document.querySelector('#coffees');
+
+
 var submitButton = document.querySelector('#submit');
-var roastSelection = document.querySelector('#roast-selection');
-
-roastSelection.addEventListener('click', updateCoffees);
 submitButton.addEventListener('click', updateCoffees);
+
+
+
+if(localStorage.getItem("coffees") !== null) {
+    coffees = localStorage.getItem("coffees");
+    coffees = JSON.parse(coffees);
+    coffeeList.innerHTML = renderCoffees(coffees);
+} else {
+    coffeeList.innerHTML = renderCoffees(coffees);
+
+}
