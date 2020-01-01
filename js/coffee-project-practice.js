@@ -45,6 +45,7 @@ function search_coffee() {
 }
 
 
+var coffeeList = document.getElementById('coffees');
 function addCoffee(inputName, roastType) {
     var addNewCoffee = {id: coffees.length + 1, name: inputName, roast: roastType};
     coffees.push(addNewCoffee);
@@ -52,6 +53,14 @@ function addCoffee(inputName, roastType) {
 
 }
 
+if(localStorage.getItem("coffees") !== null) {
+    coffees = localStorage.getItem("coffees");
+    coffees = JSON.parse(coffees);
+    coffeeList.innerHTML = renderCoffees(coffees);
+} else {
+    coffeeList.innerHTML = renderCoffees(coffees);
+
+}
 
 
 var coffees = [
@@ -85,7 +94,6 @@ addRoast.addEventListener('click', function() {
 
 
 
-var coffeeList = document.getElementById('coffees')
 var pList = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
