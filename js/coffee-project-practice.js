@@ -85,7 +85,7 @@ addRoast.addEventListener('click', function() {
 
 
 
-
+var coffeeList = document.getElementById('coffees')
 var pList = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
