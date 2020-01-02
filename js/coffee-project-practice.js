@@ -30,10 +30,12 @@ function updateCoffees() {
     coffeeList.innerHTML = renderCoffees(filteredCoffees)
 }
 
-function addCoffee(inputName, roastType) {
-    var addNewCoffee = {id: coffees.length + 1, name: inputName, roast: roastType};
+function addCoffee(inputName, roastType, inputRating) {
+    if(roastType !== "Roasts" && inputRating !== "Nicolas Rating") {
+        var addNewCoffee = {id: coffees.length + 1, name: inputName, roast: roastType};
     coffees.push(addNewCoffee);
     localStorage.setItem("coffees", JSON.stringify(coffees));
+    }
 
 }
 
@@ -46,23 +48,29 @@ function removeCoffees(coffeeInput) {
     });
 }
 
+function makeNicolas(inputCoffee) {
+var html = '';
+for(var i = 0; i < inputCoffee.rating; i++) {
+    html += 
+}
+}
 
 
 var coffees = [
-    {id: 1, name: 'National Treasure 2 Light City', roast: 'light' },
-    {id: 2, name: 'National Treasure Half City', roast: 'light' },
-    {id: 3, name: 'Con-Air Cinnamon', roast: 'light' },
-    {id: 4, name: 'Drive Angry City', roast: 'medium' },
-    {id: 5, name: 'Gone in Sixty Seconds American', roast: 'medium' },
-    {id: 6, name: 'Face-Off Breakfast', roast: 'medium' },
-    {id: 7, name: 'Matchstick Men High', roast: 'dark' },
-    {id: 8, name: 'The Wicker Man Continental', roast: 'dark' },
-    {id: 9, name: 'Lord Of War New Orleans', roast: 'dark' },
-    {id: 10, name: 'The European Ant Bully', roast: 'dark' },
-    {id: 11, name: 'World Trade Center Espresso', roast: 'dark' },
-    {id: 12, name: 'Bangkok Dangerous Viennese', roast: 'dark' },
-    {id: 13, name: 'Grindhouse Italian', roast: 'dark' },
-    {id: 14, name: 'The French Family Man', roast: 'dark'}
+    {id: 1, name: 'National Treasure 2 Light City', roast: 'light', rating: 5 },
+    {id: 2, name: 'National Treasure Half City', roast: 'light', rating: 3 },
+    {id: 3, name: 'Con-Air Cinnamon', roast: 'light', rating: 5 },
+    {id: 4, name: 'Drive Angry City', roast: 'medium', rating: 2 },
+    {id: 5, name: 'Gone in Sixty Seconds American', roast: 'medium', rating: 4 },
+    {id: 6, name: 'Face-Off Breakfast', roast: 'medium', rating: 5 },
+    {id: 7, name: 'Matchstick Men High', roast: 'dark', rating: 5 },
+    {id: 8, name: 'The Wicker Man Continental', roast: 'dark', rating: 1 },
+    {id: 9, name: 'Lord Of War New Orleans', roast: 'dark', rating: 3 },
+    {id: 10, name: 'The European Ant Bully', roast: 'dark', rating: 4 },
+    {id: 11, name: 'World Trade Center Espresso', roast: 'dark', rating: 5 },
+    {id: 12, name: 'Bangkok Dangerous Viennese', roast: 'dark', rating: 2 },
+    {id: 13, name: 'Grindhouse Italian', roast: 'dark', rating: 3 },
+    {id: 14, name: 'The French Family Man', roast: 'dark', rating: 2 }
 ];
 
 var selectedRoast = 'all roast';
