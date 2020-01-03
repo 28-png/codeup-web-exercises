@@ -1,12 +1,6 @@
 "use strict";
 
-function renderCoffee(coffee) {
-    var html = '<div class="coffee">';
-    html += '<h1>' + coffee.name + '</h1>';
-   html += '<p>' + coffee.roast + '</p>';
-   html += '</div>';
-    return html;
-}
+var coffeeList = document.getElementById('coffees');
 
 function renderCoffees(coffees) {
     var html = '';
@@ -16,7 +10,6 @@ function renderCoffees(coffees) {
     return html;
 }
 
-var coffeeList = document.getElementById('coffees');
 
 function updateCoffees() {
     var filteredCoffees = [];
@@ -32,7 +25,7 @@ function updateCoffees() {
 
 function addCoffee(inputName, roastType, inputRating) {
     if(roastType !== "Roasts" && inputRating !== "Nicolas Rating") {
-        var addNewCoffee = {id: coffees.length + 1, name: inputName, roast: roastType};
+        var addNewCoffee = {id: coffees.length + 1, name: inputName, roast: roastType, rating: inputRating};
     coffees.push(addNewCoffee);
     localStorage.setItem("coffees", JSON.stringify(coffees));
     }
@@ -44,17 +37,24 @@ function removeCoffees(coffeeInput) {
        if(coffee.name.toLowerCase() === coffeeInput.toLowerCase()) {
            coffees.splice(coffees.indexOf(coffee), 1);
        }
-       localStorage.setItem("coffees", JSON.stringify(coffees));
+      localStorage.setItem("coffees", JSON.stringify(coffees));
     });
 }
 
-function makeNicolas(inputCoffee) {
+function makeNicolas(coffee) {
 var html = '';
-for(var i = 0; i < inputCoffee.rating; i++) {
-    html += 
+for(var i = 0; i < coffee.rating; i++) {
+    html += '<img src="img/nic-icon.png" alt="nic-icon.png">'
 }
+return html;
 }
 
+function renderCoffee(coffee) {
+    var html = '<div class="coffee">';
+    html += '<h1>' + coffee.name + ' ' + makeNicolas(coffee) + '</h1>' + '<p>' + coffee.roast + '</p>';
+   html += '</div>';
+    return html;
+}
 
 var coffees = [
     {id: 1, name: 'National Treasure 2 Light City', roast: 'light', rating: 5 },
@@ -92,8 +92,9 @@ var addRoast = document.querySelector('#button');
 addRoast.addEventListener('click', function() {
     var coffeeName = document.getElementById('addCoffees');
     var coffeeRoast = document.getElementById('roast-selection2');
+    var coffeeRating = document.getElementById('nicRating');
     if(coffeeName.value !== '') {
-        addCoffee(coffeeName.value, coffeeRoast.value);
+        addCoffee(coffeeName.value, coffeeRoast.value, coffeeRating.value);
         updateCoffees();
     }
     coffeeName.value = '';
@@ -109,11 +110,6 @@ if(removeCoffeeInput.value !== '') {
 removeCoffeeInput.value = '';
 });
 
-
-
-
-var submitButton = document.querySelector('#submit');
-submitButton.addEventListener('click', updateCoffees);
 
 
 
