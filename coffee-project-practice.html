@@ -8,7 +8,6 @@
 </head>
 <body>
 <div class="backgroundColor">
-
     <center><h1 class="move border border-primary rounded-pill p-3 mb-2 bg-dark text-white">Nicolas Cage Coffee! How Nic are you today?</h1></center>
 </div>
 
@@ -18,7 +17,7 @@
     <div class="card border-0 shadow my-5 bg-info">
         <div class="card-body p-5">
             <form>
-                <h3>Select your favorite Nic Roast</h3>
+                <h3 class="mb-3">Select your favorite Nic Roast</h3>
                 <select id="roast-selection">
                    <option>all roast</option>
                     <option>light</option>
@@ -27,10 +26,10 @@
                 </select>
 
                 <!--        <label for="searchbar">Roast</label>-->
-               <input id="searchbar" type="text" name="coffee" placeholder="Search coffee...">
+               <input id="searchbar" class="mb-4" type="text" name="coffee" placeholder="Search coffee...">
                 <input id="submit" type="submit" value="Submit Roast"/>
-                <h3>Add Roast Here</h3>
-               <select name="roast" id="roast-selection2">
+                <h3 class="mb-3">Add Roast Here</h3>
+               <select name="roast" class="mb-4" id="roast-selection2">
                    <option>Roasts</option>
                    <option>light</option>
                    <option>medium</option>
@@ -44,10 +43,10 @@
                     <option>4</option>
                     <option>5</option>
                 </select>
-                <input id="addCoffees" type="text" name="coffee" placeholder="Add Roast">
+                <input id="addCoffees" class="mb-4" type="text" name="coffee" placeholder="Add Roast">
                 <input id="button" type="button" value="Add Roast">
-                <h3>Remove Roast</h3>
-                <input type="text" id="removeCoffees" placeholder="Remove Coffee">
+                <h3 class="mb-3">Remove Roast</h3>
+                <input class="mb-5" type="text" id="removeCoffees" placeholder="Remove Coffee">
                 <input id="button2" type="button" value="Remove Roast">
            </form>
             <div id="coffees"></div>

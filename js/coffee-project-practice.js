@@ -41,9 +41,9 @@ function removeCoffees(coffeeInput) {
     });
 }
 
-function makeNicolas(coffee) {
+function makeNicolas(inputCoffee) {
 var html = '';
-for(var i = 0; i < coffee.rating; i++) {
+for(var i = 0; i < inputCoffee.rating; i++) {
     html += '<img src="img/nic-icon.png" alt="nic-icon.png">'
 }
 return html;
@@ -51,7 +51,7 @@ return html;
 
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
-    html += '<h1>' + coffee.name + ' ' + makeNicolas(coffee) + '</h1>' + '<p>' + coffee.roast + '</p>';
+    html += '<h3>' + coffee.name + ' ' + makeNicolas(coffee) + '</h3>' + '<p>' + coffee.roast + '</p>';
    html += '</div>';
     return html;
 }
