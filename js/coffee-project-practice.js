@@ -10,7 +10,6 @@ function renderCoffees(coffees) {
     return html;
 }
 
-
 function updateCoffees() {
     var filteredCoffees = [];
     coffees.forEach(function(coffee) {
