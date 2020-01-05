@@ -6,6 +6,19 @@ body {
     background-size: cover;
 }
 
+.rotation {
+    animation: rotation 3s alternate;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+}
+
 #searchbar {
     width: 30%;
 }

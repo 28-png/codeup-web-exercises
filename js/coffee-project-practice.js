@@ -43,7 +43,7 @@ function removeCoffees(coffeeInput) {
 function makeNicolas(inputCoffee) {
 var html = '';
 for(var i = 0; i < inputCoffee.rating; i++) {
-    html += '<img src="img/nic-icon.png" alt="nic-icon.png">'
+    html += '<img class="rotation" src="img/nic-icon.png" alt="nic-icon.png">'
 }
 return html;
 }
