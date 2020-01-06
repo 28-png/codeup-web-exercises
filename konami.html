@@ -9,13 +9,30 @@
 <script src="js/jQuery-2.2.4.js"></script>
 <script>
     "use strict";
-var contents = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+    var allowedKeys = {
+        37: 'left',
+        38: 'up',
+       39: 'right',
+        40: 'down',
+        65: 'a',
+        66: 'b',
+        13: 'return'
+    };
+var contents = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a', 'return'];
+var starting = 0;
     $(document).keyup(function(event){
-        var started = false;
-        // console.log(event.keyCode);
-    for(var i = 0; i < contents.length; i++) {
-
+        var key = allowedKeys[event.keyCode];
+        var requiredKey = contents[starting];
+        if(key === requiredKey) {
+            starting++;
+       if(starting === contents.length) {
+            alert("You have 30 lives!");
+            starting = 0
         }
+        } else {
+            starting = 0
+        }
+
     });
 </script>
 </body>
