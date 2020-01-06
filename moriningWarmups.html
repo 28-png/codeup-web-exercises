@@ -119,14 +119,24 @@
         // functionA(function () {
         //     alert('it works!')
         // });
-        var arr = ['cat', 'dog', 'mouse', 'fish', 'bird']
+        var arr = ['cat', 'dog', 'mouse', 'fish', 'bird'];
            function contains(x) {
                return arr.includes(x)
             }
-console.log(contains('bird'))
+console.log(contains('bird'));
 console.log(contains('flamingo'))
 
-
+            for(var i = 1; i < 30; i++) {
+        if(i % 3 === 0 && i % 5 === 0) {
+            console.log("FizzBuzz")
+        } else if(i % 3 === 0) {
+            console.log("Fizz")
+        } else if(i % 5 === 0) {
+            console.log("Buzz")
+        } else {
+            console.log(i)
+        }
+    }
 
 
         </script>
