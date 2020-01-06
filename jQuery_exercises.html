@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>Happy New Year!</h1>
+<h3>New Years Resolutions</h3>
+<ul id="resolutions">
+    <li>Lose Weight</li>
+    <li>gain Weight</li>
+    <li id="superImportant">get better at coding</li>
+    <li class="important">Get Awesome Career</li>
+    <li class="important">Spend more time with awesome people</li>
+</ul>
+<form name="resForm">
+<div>
+    <label for="goal">What is your goal for this year?</label>
+    <input id="goal" name="goal" type="text">
+</div>
+</form>
+<button id="button" class="cyan" >Click Me!</button>
+<script src="js/jQuery-2.2.4.js"></script>
+<script>
+    (function () {
+        "use strict";
+    // $(document).ready(function() {
+        // alert( 'The DOM has finished loading!' );
+   // console.log($);
+    // console.log(jQuery)
+    // });
+// document.getElementById('button').addEventListener('click', function () {
+//     alert("you clicked me!")
+// })
+        $("#button").click(function () {
+           alert("you clicked me!")
+        });
+
+        $(".important").css("background-color", "purple");
+        $("#superImportant").css("background-color", "red");
+        $("li").css("font-size", "20px");
+
+    })();
+</script>
+
+
+</body>
+</html>
