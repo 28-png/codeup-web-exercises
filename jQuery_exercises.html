@@ -11,12 +11,13 @@
 <h1>Happy New Year!</h1>
 <h3>New Years Resolutions</h3>
 <ul id="resolutions">
-    <li>Lose Weight</li>
-    <li>gain Weight</li>
+    <li class="codeup">Lose Weight</li>
+    <li class="codeup">gain Weight</li>
+    <li id="codeup">Get Awesome Career</li>
     <li id="superImportant">get better at coding</li>
-    <li class="important">Get Awesome Career</li>
     <li class="important">Spend more time with awesome people</li>
 </ul>
+<p id="paragraph">I love rocks I love rocks I love rocks I love rocks I love Rocks</p>
 <form name="resForm">
 <div>
     <label for="goal">What is your goal for this year?</label>
@@ -28,6 +29,21 @@
 <script>
     (function () {
         "use strict";
+        //id selectors
+        // $("#superImportant").css("background-color", "red");
+        // var contents = $('#superImportant').html();
+        // alert(contents);
+
+        //class selectors
+        // $(".codeup").css("border", "1px solid red");
+
+
+        //element selectors
+        $("li").css("font-size", "20px");
+        $("li, p, h1").css("background-color", "#FF0")
+        var contents = $("h1").html();
+        alert(contents)
+
     // $(document).ready(function() {
         // alert( 'The DOM has finished loading!' );
    // console.log($);
@@ -36,13 +52,10 @@
 // document.getElementById('button').addEventListener('click', function () {
 //     alert("you clicked me!")
 // })
-        $("#button").click(function () {
-           alert("you clicked me!")
-        });
+//         $("#button").click(function () {
+//            alert("you clicked me!")
+//         });
 
-        $(".important").css("background-color", "purple");
-        $("#superImportant").css("background-color", "red");
-        $("li").css("font-size", "20px");
 
     })();
 </script>
