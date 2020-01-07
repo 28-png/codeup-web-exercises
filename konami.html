@@ -6,10 +6,12 @@
 <body>
 <h1>Konami Code</h1>
 
-
+<div class="image1"></div>
 <script src="js/jQuery-2.2.4.js"></script>
 <script>
     "use strict";
+    var audioOne = new Audio('Bunny-Con-Air.mp3');
+    var audioTwo = new Audio('NOT-THE-BEES-long.mp3')
     //keyboard events notes
 
 
@@ -27,20 +29,22 @@
     };
 var contents = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a', 'return'];
 var starting = 0;
-var beginning = false;
     $(document).keyup(function(event){
         var key = allowedKeys[event.keyCode];
        var requiredKey = contents[starting];
-        if(key === requiredKey) {
+       if(key === requiredKey) {
             starting++;
        if(starting === contents.length) {
            $('body').css("background-color", "coral");
           $('h1').html('<h1>You have 30 Lives</h1>');
+          $('.image1').append('<img src="img/bunny-box.jpg" alt="bunny">');
+            audioOne.play();
             starting = 0
         }
         } else {
             $('body').css("background-color", "red");
             $('h1').html('<h1>WRONG!</h1>');
+            audioTwo.play()
             starting = 0
         }
 
