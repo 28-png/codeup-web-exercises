@@ -2,22 +2,28 @@
 <html>
 <head>
     <title>Konami Code</title>
+    <script src="https://kit.fontawesome.com/9a07fbf157.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <h1>Konami Code</h1>
 
 <div class="image1"></div>
+<center><div class="arrows"></div></center>
 <script src="js/jQuery-2.2.4.js"></script>
 <script>
     "use strict";
-    var audioOne = new Audio('Bunny-Con-Air.mp3');
-    var audioTwo = new Audio('NOT-THE-BEES-long.mp3')
-    //keyboard events notes
-
-
-
-
     //Konami code exercise
+
+    //----------------------------------------------
+    // these are my global variables for the audio
+    //==============================================
+
+    var audioOne = new Audio('Bunny-Con-Air.mp3');
+    var audioTwo = new Audio('NOT-THE-BEES-long.mp3');
+
+
+
+
     var allowedKeys = {
         37: 'left',
         38: 'up',
@@ -27,11 +33,46 @@
         66: 'b',
         13: 'return'
     };
-var contents = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a', 'return'];
+//--------------------------------------------------------------
+//    I created a variable to specify the keys for readability
+//==============================================================
+
+    var contents = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a', 'return'];
+
+//---------------------------------------------------------
+//    My counter starts at zero and two variables
+    // key specifies the allowed keys in the above variable
+//    requiredKey counts through the contents var in order
+//=========================================================
+
 var starting = 0;
     $(document).keyup(function(event){
         var key = allowedKeys[event.keyCode];
        var requiredKey = contents[starting];
+
+       // ----------------------------------------------
+       //      this causes keys to render on page
+       // ==============================================
+
+       if(key === 'up') {
+           $('.arrows').append('<i class="fas fa-arrow-up"></i>')
+       } else if(key === 'down') {
+           $('.arrows').append('<i class="fas fa-arrow-down"></i>')
+       } else if(key === 'left') {
+           $('.arrows').append('<i class="fas fa-arrow-left"></i>')
+       } else if(key === 'right') {
+           $('.arrows').append('<i class="fas fa-arrow-right"></i>')
+       } else if(key === 'b') {
+           $('.arrows').append('<i class="fab fa-btc"></i>')
+       } else if(key === 'a') {
+           $('.arrows').append('<i class="fab fa-autoprefixer"></i>')
+       }
+
+       //-----------------------------------------------------
+       // if the key pressed matches the required key it starts
+        // the count otherwise it resets
+       //=====================================================
+
        if(key === requiredKey) {
             starting++;
        if(starting === contents.length) {
@@ -44,6 +85,7 @@ var starting = 0;
         } else {
             $('body').css("background-color", "red");
             $('h1').html('<h1>WRONG!</h1>');
+            $('.image1').append('<img src="img/not-the-bees.gif" alt="bees">')
             audioTwo.play()
             starting = 0
         }
