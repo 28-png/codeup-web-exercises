@@ -6,9 +6,16 @@
 <body>
 <h1>Konami Code</h1>
 
+
 <script src="js/jQuery-2.2.4.js"></script>
 <script>
     "use strict";
+    //keyboard events notes
+
+
+
+
+    //Konami code exercise
     var allowedKeys = {
         37: 'left',
         38: 'up',
@@ -20,22 +27,31 @@
     };
 var contents = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a', 'return'];
 var starting = 0;
+var beginning = false;
     $(document).keyup(function(event){
         var key = allowedKeys[event.keyCode];
-        var requiredKey = contents[starting];
+       var requiredKey = contents[starting];
         if(key === requiredKey) {
             starting++;
        if(starting === contents.length) {
            $('body').css("background-color", "coral");
-           alert("You have 30 lives!");
+          $('h1').html('<h1>You have 30 Lives</h1>');
             starting = 0
         }
         } else {
             $('body').css("background-color", "red");
+            $('h1').html('<h1>WRONG!</h1>');
             starting = 0
         }
 
     });
+//    instructor example
+
+
+
+
+
+
 </script>
 </body>
 </html>
