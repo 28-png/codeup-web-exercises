@@ -30,7 +30,23 @@
 
         }
 
-        .frame {
+        .frame1 {
+
+            margin-top: 10px;
+            border: 10px solid saddlebrown;
+            height: 143px;
+            width: 200px;
+        }
+
+        .frame2 {
+
+            margin-top: 10px;
+           border: 10px solid saddlebrown;
+            height: 143px;
+            width: 200px;
+        }
+
+        .frame3 {
 
             margin-top: 10px;
             border: 10px solid saddlebrown;
@@ -119,15 +135,15 @@
 
 <div class="allFrames">
 
-<div class="frame">
+<div class="frame1">
     <img class="left" src="img/tommy1.jpg" alt="tommy">
     <button type="button" class="move1">< Move</button>
 </div>
-<div class="frame">
+<div class="frame2">
     <img class="middle" src="img/image-fake.jpg" alt="fake">
     <button type="button" class="move2">< Move ></button>
 </div>
-<div class="frame">
+<div class="frame3">
     <img class="right" src="img/nebula.jpg" alt="nebula">
     <button type="button" class="move3">Move ></button>
 </div>
@@ -140,24 +156,26 @@
 </div>
 
 
-
-
 <script src="js/jQuery-2.2.4.js"></script>
 <script>
+    $(document).ready(function() {
     // traversing bonus
-
+$('.move1').click(function() {
+   $('.frame1').children('img').attr('src', 'img/image-fake.jpg');
+    $('.frame2').children('img').attr('src', 'img/tommy1.jpg');
+});
 
 
 
 // <!-- css jQuery   -->
         $('.facts').click(function(e) {
-            e.preventDefault()
+            e.preventDefault();
        $("dd").toggleClass('invisible')
 
         });
        $('dt').click(function() {
             $(this).toggleClass('highlight')
-        })
+        });
 
 
 //        traversing exercise
@@ -197,7 +215,7 @@ $('.hide2').hide();
     }, 8000)
 
 
-
+});
 </script>
 </body>
 </html>
