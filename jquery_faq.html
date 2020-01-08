@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .invisible {
+            visibility: hidden;
+        }
+    </style>
+
+</head>
+<body>
+<h3 class="facts">click for facts</h3>
+<ul class="invisible showList">
+    <li>fact 1</li>
+    <li>fact 2</li>
+    <li>fact 3</li>
+    <li>fact 4</li>
+    <li>fact 5</li>
+    <li>fact 6</li>
+    <li>fact 7</li>
+    <li>fact 8</li>
+    <li>fact 9</li>
+    <li>fact 10</li>
+</ul>
+
+
+
+<script src="js/jQuery-2.2.4.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.facts').click(function(event) {
+                event.preventDefault();
+            if($(this).text() === 'click for facts') {
+                $(this).html('<h3>10 FAQs about national parks</h3>');
+                $('li').click(function() {
+                    $(this).css("background-color", "yellow")
+                });
+           $('.showList').removeClass('invisible');
+            } else if($(this).text() === '10 FAQs about national parks') {
+                $(this).html('<h3>click for facts</h3>');
+                $('.showList').toggleClass('invisible');
+            }
+        });
+    });
+
+</script>
+</body>
+</html>
