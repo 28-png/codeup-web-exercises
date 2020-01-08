@@ -21,7 +21,6 @@
 <body>
 <h3 class="facts">click for facts</h3>
 
-<a href="" class="facts">Press for facts</a>
 <dl>
     <dt>Acadia National Park</dt>
     <dd class="invisible showList">Acadia is the oldest park east of the Mississippi River and the <br>
@@ -67,20 +66,15 @@
 
 <script src="js/jQuery-2.2.4.js"></script>
 <script>
-    $(document).ready(function() {
-        $('.facts').click(function() {
-            if($(this).text() === 'click for facts') {
-                $(this).html('<h3>10 FAQs about national parks</h3>');
-                $('dt').click(function() {
-                    $(this).toggleClass("highlight");
-                });
-           $('.showList').removeClass('invisible');
-            } else if($(this).text() === '10 FAQs about national parks') {
-                $(this).html('<h3>click for facts</h3>');
-               $('.showList').toggleClass('invisible');
-            }
+        $('.facts').click(function(e) {
+            e.preventDefault()
+        $("dd").toggleClass('invisible')
+
         });
-    });
+        $('dt').click(function() {
+            $(this).toggleClass('highlight')
+        })
+
 
 </script>
 </body>
