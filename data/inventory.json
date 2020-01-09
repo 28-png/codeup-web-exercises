@@ -19,7 +19,7 @@
         "quantity": 5,
         "categories": [
             "tool",
-            "gas",
+           "gas",
             "outdoor"
         ],
         "price": 200
