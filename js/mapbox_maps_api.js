@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 mapboxgl.accessToken = mapboxToken;
 
@@ -6,7 +6,7 @@ var mapOptions = new mapboxgl.Map({
     container: 'map',
   style: 'mapbox://styles/mapbox/dark-v10',
    zoom: 11,
-    center: [-98.4951, 29.4246],
+    center: [-98.4951, 29.4246]
 });
 
 
@@ -40,7 +40,8 @@ var popup = new mapboxgl.Popup({ closeOnClick: false })
     .setLngLat([-96, 37.8])
     .setHTML('Chuy\'s, 8438 TX-151, San Antonio, TX 78245')
     .addTo(mapOptions);
-marker.setPopup(popup)
+
+marker.setPopup(popup);
 //chuys end
 // chick - file
 var  markerOptions2 = {
@@ -56,7 +57,7 @@ var popup2 = new mapboxgl.Popup({ closeOnClick: false })
     .setLngLat([-96, 37.8])
     .setHTML('Chick-fil-A, 4110 S New Braunfels Ave, San Antonio, TX 78223')
     .addTo(mapOptions);
-marker2.setPopup(popup2)
+marker2.setPopup(popup2);
 // chick - file
 //Texas Roadhouse
 var  markerOptions3 = {
