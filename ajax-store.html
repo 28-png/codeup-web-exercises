@@ -28,25 +28,30 @@
 (function() {
     "use strict";
     $(document).ready(function() {
+    function reload() {
 
-    // TODO: Create an ajax GET request for /data/inventory.json
-    $.ajax("data/inventory.json").done(function(tool) {
-        for(var i = 0; i < tool.length; i++) {
-        $('#insertProducts').append(createTable(i))
-        }
-        function createTable(i) {
-           return '<tr>' +
-               '<th>' + tool[i].title + '</th>' +
-               '<th>' + tool[i].quantity + '</th>' +
-               '<th>' + tool[i].price + '</th>' +
-              '<th>' + tool[i].categories + '</th>'
-               +  '</tr>'
 
-        }
-    });
+        // TODO: Create an ajax GET request for /data/inventory.json
+        $.ajax("data/inventory.json").done(function (tool) {
+            for (var i = 0; i < tool.length; i++) {
+                $('#insertProducts').append(createTable(i))
+            }
 
+            function createTable(i) {
+                return '<tr>' +
+                    '<th>' + tool[i].title + '</th>' +
+                    '<th>' + tool[i].quantity + '</th>' +
+                    '<th>' + tool[i].price + '</th>' +
+                    '<th>' + tool[i].categories + '</th>'
+                    + '</tr>'
+
+            }
+        });
+    }
+    reload();
         $('#refresh').click(function () {
-            location.reload()
+        $('#insertProducts').html('');
+            reload()
         })
 
 
