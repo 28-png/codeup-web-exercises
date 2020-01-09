@@ -161,9 +161,34 @@
     $(document).ready(function() {
     // traversing bonus
 $('.move1').click(function() {
-   $('.frame1').children('img').attr('src', 'img/image-fake.jpg');
-    $('.frame2').children('img').attr('src', 'img/tommy1.jpg');
+   var holdThis = $('.left').attr('src')
+    var takeThis = $('.middle').attr('src')
+    $('.left').attr('src', takeThis);
+   $('.middle').attr('src', holdThis);
+
 });
+
+$('.move3').click(function() {
+    var holdThis = $('.right').attr('src');
+    var takeThis = $('.middle').attr('src');
+    $('.right').attr('src', takeThis);
+    $('.middle').attr('src', holdThis);
+});
+
+$('.move2').click(function() {
+    var randomNumber = Math.floor(Math.random() * 2) + 1;
+    if(randomNumber === 1) {
+       var holdThis = $('.left').attr('src')
+       var takeThis = $('.middle').attr('src')
+        $('.left').attr('src', takeThis);
+        $('.middle').attr('src', holdThis);
+    } else {
+        var holdThis = $('.right').attr('src');
+        var takeThis = $('.middle').attr('src');
+        $('.right').attr('src', takeThis);
+        $('.middle').attr('src', holdThis);
+    }
+})
 
 
 
