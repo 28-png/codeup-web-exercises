@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>Happy New Year!</h1>
+<h3>New Years Resolutions</h3>
+<ul id="resolutions">
+    <li class="codeup">Lose Weight</li>
+    <li class="codeup">gain Weight</li>
+    <li id="codeup">Get Awesome Career</li>
+    <li id="superImportant">get better at coding</li>
+    <li class="important">Spend more time with awesome people</li>
+</ul>
+<p id="paragraph">I love rocks I love rocks I love rocks I love rocks I love Rocks</p>
+<form name="resForm">
+<div>
+    <label for="goal">What is your goal for this year?</label>
+    <input id="goal" name="goal" type="text">
+</div>
+</form>
+<button id="button" class="cyan" >Click Me!</button>
+<script src="js/jQuery-2.2.4.js"></script>
+<script>
+    (function () {
+        "use strict";
+        //id selectors
+        // $("#superImportant").css("background-color", "red");
+        // var contents = $('#superImportant').html();
+        // alert(contents);
+
+        //class selectors
+        // $(".codeup").css("border", "1px solid red");
+
+        //element selectors
+        // $("li").css("font-size", "20px");
+        // $("li, p, h1").css("background-color", "#FF0");
+        // var contents = $("h1").html();
+        // alert(contents)
+
+    //    mouse events exercise
+
+        //    click
+
+        $("h1").click(function() {
+            $(this).css("background-color", "blue")
+            });
+
+        //    dbclick
+
+        $("p").dblclick(function() {
+            $(this).css("font-size", "18px")
+        });
+
+        //hover
+
+        $('li').hover(
+            function() {
+                $(this).css('background-color', 'red');
+            },
+            function() {
+                $(this).css('background-color', 'black');
+            });
+
+    })();
+</script>
+
+
+</body>
+</html>
