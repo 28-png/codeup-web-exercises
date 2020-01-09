@@ -6,9 +6,11 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Ajax Blog</title>
 </head>
-<body class="m-5">
+<body class="m-5 bg-info">
+
+<h1 class="d-flex justify-content-center">Post Your Blog!</h1>
 <div class="card">
     <div class="card-header">
         Blogs
@@ -16,7 +18,9 @@
     <div class="card-body">
     <div id="post"></div>
     </div>
+    <button type="button" name="post" id="clickPost">Post</button>
 </div>
+
 
 
 
@@ -26,22 +30,30 @@
     (function() {
        "use strict"
        $(document).ready(function () {
-           $.ajax("data/blog.json").done(function(blog) {
-               for(var i = 0; i < blog.length; i++) {
-                   $('#post').append(createTable(i))
-               }
-               function createTable(i) {
-                   return '<div>' +
-                       '<h5 class="card-title">' + blog[i].title + '</h5>' +
-                       '<p class="card-content">' + blog[i].content + '</p>' +
-                       '<p class="card-content">' + blog[i].categories + '</p>' +
-                       '<p class="card-content">' + blog[i].date + '</p>'
-                   + '</div>'
+           function postPost() {
+
+               $.ajax("data/blog.json").done(function (blog) {
+                   for (var i = 0; i < blog.length; i++) {
+                       $('#post').append(createTable(i))
+                   }
+
+                   function createTable(i) {
+                       return '<div>' +
+                           '<h5 class="card-title">' + blog[i].title + '</h5>' +
+                           '<p class="card-content">' + blog[i].content + '</p>' +
+                           '<p class="card-content">' + blog[i].categories + '</p>' +
+                           '<p class="card-content">' + blog[i].date + '</p>'
+                           + '</div>'
 
 
-               }
-           });
-
+                   }
+               });
+           }
+           postPost()
+           $('#clickPost').click(function () {
+               $('#post').empty()
+               postPost()
+           })
 
 
        })
