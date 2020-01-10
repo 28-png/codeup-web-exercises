@@ -14,48 +14,52 @@
 <div class="card">
     <div class="card-header">
         Blogs
-    </div>
+   </div>
     <div class="card-body">
     <div id="post"></div>
     </div>
-    <button type="button" name="post" id="clickPost">Post</button>
 </div>
-
-
-
-
+<textarea name="" id="postArea" cols="30" rows="10" placeholder="Add Post Here"></textarea>
+    <button type="button" name="post" id="clickPost">Post</button>
 
 <script src="js/jQuery-2.2.4.js"></script>
 <script>
     (function() {
        "use strict"
        $(document).ready(function () {
-           function postPost() {
 
-               $.ajax("data/blog.json").done(function (blog) {
-                   for (var i = 0; i < blog.length; i++) {
-                       $('#post').append(createTable(i))
+                   $.ajax("data/blog.json").done(function (blog) {
+                       for (var i = 0; i < blog.length; i++) {
+                           $('#post').append(createTable(i))
+                       }
+
+                       function createTable(i) {
+                           return '<div>' +
+                               '<h5 class="card-title">' + blog[i].title + '</h5>' +
+                               '<p class="card-content">' + blog[i].content + '</p>' +
+                               '<p class="card-content">' + blog[i].categories + '</p>' +
+                               '<p class="card-content">' + blog[i].date + '</p>'
+                               + '</div>'
+
+                       }
+                   });
+
+
+                        function addToTable(blogInput) {
+                       var obj = $.ajax("data/blog.json");
+                       var addNewObj = {id: obj.length + 1, content: blogInput };
+                       obj.push(addNewObj)
+                        }
+
+
+
+              $('#clickPost').click(function() {
+                var blogContent = $('#postArea');
+                   if(blogContent !== '') {
+                       addToTable(blogContent.value);
                    }
-
-                   function createTable(i) {
-                       return '<div>' +
-                           '<h5 class="card-title">' + blog[i].title + '</h5>' +
-                           '<p class="card-content">' + blog[i].content + '</p>' +
-                           '<p class="card-content">' + blog[i].categories + '</p>' +
-                           '<p class="card-content">' + blog[i].date + '</p>'
-                           + '</div>'
-
-
-                   }
-               });
-           }
-           postPost()
-           $('#clickPost').click(function () {
-               $('#post').empty()
-               postPost()
-           })
-
-
+                   blogContent.value = '';
+               })
        })
     })()
 </script>
