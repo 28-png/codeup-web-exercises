@@ -21,45 +21,61 @@
 </div>
 <textarea name="" id="postArea" cols="30" rows="10" placeholder="Add Post Here"></textarea>
     <button type="button" name="post" id="clickPost">Post</button>
+    <button type="button" id="resetBlog">Reset</button>
 
 <script src="js/jQuery-2.2.4.js"></script>
 <script>
     (function() {
        "use strict"
        $(document).ready(function () {
-
-                   $.ajax("data/blog.json").done(function (blog) {
-                       for (var i = 0; i < blog.length; i++) {
+                    $.ajax("data/blog.json").done(function (blog) {
+                        for (var i = 0; i < blog.length; i++) {
                            $('#post').append(createTable(i))
-                       }
-
-                       function createTable(i) {
-                           return '<div>' +
-                               '<h5 class="card-title">' + blog[i].title + '</h5>' +
-                               '<p class="card-content">' + blog[i].content + '</p>' +
-                               '<p class="card-content">' + blog[i].categories + '</p>' +
-                               '<p class="card-content">' + blog[i].date + '</p>'
-                               + '</div>'
-
-                       }
-                   });
-
-
-                        function addToTable(blogInput) {
-                       var obj = $.ajax("data/blog.json");
-                       var addNewObj = {id: obj.length + 1, content: blogInput };
-                       obj.push(addNewObj)
                         }
 
+                        function createTable(i) {
+                            return '<div>' +
+                                '<h5 class="card-title">' + blog[i].title + '</h5>' +
+                                '<p class="card-content">' + blog[i].content + '</p>' +
+                                '<p class="card-content">' + blog[i].categories + '</p>' +
+                                '<p class="card-content">' + blog[i].date + '</p>'
+                                + '</div>'
 
+                        }
+                    })
 
-              $('#clickPost').click(function() {
-                var blogContent = $('#postArea');
-                   if(blogContent !== '') {
-                       addToTable(blogContent.value);
+            var $newPosts = $('#post');
+           var $newContent = $('#postArea');
+           $('#clickPost').click(function() {
+               var blogPost = {
+                   content: $newContent.val()
+               };
+               $.ajax({
+                   type: 'POST',
+                   url: 'data/blog.json',
+                   data: blogPost,
+                   success: function(newPost) {
+                       $newPosts.append('<div>' + '<p>' + newPost.content + '</p>' + '</div>')
                    }
-                   blogContent.value = '';
+
+
                })
+
+           })
+
+
+
+
+              //           function addToTable(blogInput) {
+              //          var obj = $.ajax("data/blog.json");
+              //          var addNewObj = {id: obj.length + 1, content: blogInput };
+              //          obj.push(addNewObj)
+              //           }
+              //
+              // $('#clickPost').click(function() {
+              //   var blogContent = $('#postArea');
+              // $('#post').append(addToTable(blogContent.value))
+              // })
        })
     })()
 </script>
