@@ -137,7 +137,48 @@ console.log(contains('flamingo'))
             console.log(i)
         }
     }
+            var hamsters = [
+                {
+                    name: "Hamtaro",
+                    heightInMM: 86,
+                    fur: ['orange', 'white'],
+                    gender: "male",
+                    dateOfBirth: "August 6"
+                } , {
+                    name: "Bijou",
+                    heightInMM: 75,
+                    fur: ['white'],
+                    gender: "female",
+                    dateOfBirth: "July 10"
+                } , {
+                    name: "Oxnard",
+                    heightInMM: 100,
+                    fur: ['grey', 'white'],
+                    gender: "male",
+                    dateOfBirth: "May 3"
+                } , {
+                    name: "Boss",
+                    heightInMM: 120,
+                    fur: ['brown', 'white'],
+                    gender: "male",
+                    dateOfBirth: "Spetember 21"
+                } , {
+                    name: "Snoozer",
+                    heightInMM: 85,
+                    fur: ['brown', 'white', "pink"],
+                    gender: "male",
+                    dateOfBirth: "January 14"
+                }
+            ];
 
+            function averageHeight(arr) {
+                var total = 0
+                arr.forEach(function (ham) {
+                    total += ham.heightInMM
+                })
+                return total/arr.length
+            }
+            console.log(averageHeight(hamsters))
 
         </script>
     </body>

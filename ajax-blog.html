@@ -45,10 +45,10 @@
                     })
 
             var $newPosts = $('#post');
-           var $newContent = $('#postArea');
+           var $content = $('#postArea');
            $('#clickPost').click(function() {
                var blogPost = {
-                   content: $newContent.val()
+                   content: $content.val()
                };
                $.ajax({
                    type: 'POST',
