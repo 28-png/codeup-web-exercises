@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Weather Map</title>
+</head>
+<body class="m-5">
+
+<div class="d-flex justify-content-center">
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+       <div id="renderContent"></div>
+    </div>
+</div>
+    <div class="d-flex justify-content-center">
+        <div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <div id="renderContent2"></div>
+    </div>
+    </div>
+        <div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <div id="renderContent3"></div>
+    </div>
+
+</div>
+    </div>
+</div>
+<script src="js/jQuery-2.2.4.js"></script>
+<script src="js/keys.js"></script>
+<script>
+
+    $.ajax("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkies + "/29.4241,-98.4936"
+    ).done(function(weather) {
+        console.log(weather);
+        var iconKeys = {
+            snow: "img/climacons-master/SVG/Snowflake.svg",
+            rain: "img/climacons-master/SVG/Cloud-Rain.svg",
+            clearday: "img/climacons-master/SVG/Sun.svg",
+            partlycloudyday: "img/climacons-master/SVG/Cloud-Sun.svg",
+            fog: "img/climacons-master/SVG/Cloud-Fog-Moon.svg",
+            cloudy: "img/climacons-master/SVG/Cloud.svg"
+
+
+       };
+
+
+
+    var newDate = new Date(1578690404 * 1000)
+       // first day
+       function renderOnPage() {
+            var  pendingString = weather.currently.icon;
+           var finalString = pendingString.split("-").join("");
+           return '<div>' +
+               '<h5>' + newDate.toString().substring(0, 10) + '</h5>' +
+               '<h4 class="d-flex justify-content-center">' + weather.currently.temperature + '°'  + '/' + weather.currently.apparentTemperature + '°' + '</h4>' +
+                   '<h6>Time Zone: ' + weather.timezone + '</h6>' +
+                    '<img src=' + iconKeys[finalString] +  '>' +
+                   '<p>Summary: ' + weather.currently.summary + '</p>' +
+                   '<p>Humidity: ' + weather.currently.humidity + '</p>' +
+                    '<p>Wind: ' + weather.currently.windSpeed + '</p>' +
+            '</div>'
+       }
+            $('#renderContent').append(renderOnPage());
+    var newDate2 = new Date(1578722400 * 1000)
+       // second day
+       function renderOnPage2() {
+        var pendingString = weather.daily.data[1].icon;
+        var finalString = pendingString.split("-").join("");
+            return '<div>' +
+                '<h5>' + newDate2.toString().substring(0, 10) + '</h5>' +
+                '<h4 class="d-flex justify-content-center">' + weather.daily.data[1].temperatureLow + '°' + '/' + weather.daily.data[1].temperatureHigh + '°' + '</h4>' +
+                '<h6>Time Zone: ' + weather.timezone + '</h6>' +
+                    '<img src=' + iconKeys[finalString] + '>' +
+               '<p>Summary: ' + weather.daily.data[1].summary + '</p>' +
+                '<p>Humidity: ' + weather.daily.data[1].humidity + '</p>' +
+                '<p>Wind: ' + weather.daily.data[1].windSpeed + '</p>' +
+               '</div>'
+        }
+        $('#renderContent2').append(renderOnPage2());
+        var newDate3 = new Date(1578808800 * 1000)
+        function renderOnPage3() {
+        var pendingString = weather.daily.data[2].icon;
+            var finalString = pendingString.split("-").join("");
+            return '<div>' +
+                '<h5>' + newDate3.toString().substring(0, 10) + '</h5>' +
+                '<h4 class="d-flex justify-content-center">' + weather.daily.data[2].temperatureLow + '°' + '/' + weather.daily.data[2].temperatureHigh + '°' + '</h4>' +
+                '<h6>Time Zone: ' + weather.timezone + '</h6>' +
+                    '<img src=' + iconKeys[finalString] + '>' +
+                '<p>Summary: ' + weather.daily.data[2].summary + '</p>' +
+                '<p>Humidity: ' + weather.daily.data[2].humidity + '</p>' +
+                '<p>Wind: ' + weather.daily.data[2].windSpeed + '</p>' +
+                '</div>'
+        }
+        $('#renderContent3').append(renderOnPage3())
+
+    })
+</script>
+</body>
+</html>

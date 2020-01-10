@@ -52,7 +52,7 @@
                };
                $.ajax({
                    type: 'POST',
-                   url: 'data/blog.json',
+                  url: 'data/blog.json',
                    data: blogPost,
                    success: function(newPost) {
                        $newPosts.append('<div>' + '<p>' + newPost.content + '</p>' + '</div>')
