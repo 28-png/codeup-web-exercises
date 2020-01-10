@@ -8,28 +8,30 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Weather Map</title>
 </head>
-<body class="m-5">
+<body class="m-5 bg-info">
+
+<h1>Weather Info</h1>
 
 <div class="d-flex justify-content-center">
-<div class="card" style="width: 18rem;">
+<div class="card bg-light" style="width: 18rem; height: 25vw">
     <div class="card-body">
        <div id="renderContent"></div>
     </div>
 </div>
     <div class="d-flex justify-content-center">
-        <div class="card" style="width: 18rem;">
+        <div class="card bg-light" style="width: 18rem; height: 25vw">
     <div class="card-body">
         <div id="renderContent2"></div>
     </div>
     </div>
-        <div class="card" style="width: 18rem;">
+        <div class="card bg-light" style="width: 18rem; height: 25vw">
     <div class="card-body">
         <div id="renderContent3"></div>
     </div>
+</div>
 
 </div>
     </div>
-</div>
 <script src="js/jQuery-2.2.4.js"></script>
 <script src="js/keys.js"></script>
 <script>
@@ -45,34 +47,45 @@
             fog: "img/climacons-master/SVG/Cloud-Fog-Moon.svg",
             cloudy: "img/climacons-master/SVG/Cloud.svg"
 
+        };
+        var today = new Date();
+        var day = today.getDay();
+        var daylist = ["Sunday", "Monday", "Tuesday", "Wednesday ", "Thursday", "Friday", "Saturday"]
 
-       };
+
+        Date.prototype.addDays = function(days) {
+            var date = new Date(this.valueOf());
+            date.setDate(date.getDate() + days);
+            return date;
+        }
+
+        var date = new Date();
 
 
-
-    var newDate = new Date(1578690404 * 1000)
        // first day
+
        function renderOnPage() {
             var  pendingString = weather.currently.icon;
            var finalString = pendingString.split("-").join("");
            return '<div>' +
-               '<h5>' + newDate.toString().substring(0, 10) + '</h5>' +
+               '<h5>' + date.addDays(0).toString().substring(0, 10) + '</h5>' +
                '<h4 class="d-flex justify-content-center">' + weather.currently.temperature + '°'  + '/' + weather.currently.apparentTemperature + '°' + '</h4>' +
                    '<h6>Time Zone: ' + weather.timezone + '</h6>' +
                     '<img src=' + iconKeys[finalString] +  '>' +
-                   '<p>Summary: ' + weather.currently.summary + '</p>' +
+                  '<p>Summary: ' + weather.currently.summary + '</p>' +
                    '<p>Humidity: ' + weather.currently.humidity + '</p>' +
                     '<p>Wind: ' + weather.currently.windSpeed + '</p>' +
             '</div>'
        }
             $('#renderContent').append(renderOnPage());
-    var newDate2 = new Date(1578722400 * 1000)
+
+
        // second day
        function renderOnPage2() {
         var pendingString = weather.daily.data[1].icon;
         var finalString = pendingString.split("-").join("");
             return '<div>' +
-                '<h5>' + newDate2.toString().substring(0, 10) + '</h5>' +
+                '<h5>' + date.addDays(1).toString().substring(0, 10) + '</h5>' +
                 '<h4 class="d-flex justify-content-center">' + weather.daily.data[1].temperatureLow + '°' + '/' + weather.daily.data[1].temperatureHigh + '°' + '</h4>' +
                 '<h6>Time Zone: ' + weather.timezone + '</h6>' +
                     '<img src=' + iconKeys[finalString] + '>' +
@@ -82,12 +95,13 @@
                '</div>'
         }
         $('#renderContent2').append(renderOnPage2());
-        var newDate3 = new Date(1578808800 * 1000)
+
+        // third day
         function renderOnPage3() {
         var pendingString = weather.daily.data[2].icon;
             var finalString = pendingString.split("-").join("");
             return '<div>' +
-                '<h5>' + newDate3.toString().substring(0, 10) + '</h5>' +
+                '<h5>' + date.addDays(2).toString().substring(0, 10) + '</h5>' +
                 '<h4 class="d-flex justify-content-center">' + weather.daily.data[2].temperatureLow + '°' + '/' + weather.daily.data[2].temperatureHigh + '°' + '</h4>' +
                 '<h6>Time Zone: ' + weather.timezone + '</h6>' +
                     '<img src=' + iconKeys[finalString] + '>' +
