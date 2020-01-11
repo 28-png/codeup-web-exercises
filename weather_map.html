@@ -27,13 +27,13 @@
     </div>
         <div class="card bg-light" style="width: 18rem; height: 23vw">
         <div class="card-body">
-            <div id="renderContent3"></div>
+           <div id="renderContent3"></div>
         </div>
         </div>
     </div>
     </div>
 
-<div id='map'></div>
+<div id='map' style='width: 1235px; height: 500px;'></div>
 
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 <script src="js/jQuery-2.2.4.js"></script>
@@ -113,7 +113,7 @@
         }
         $('#renderContent3').append(renderOnPage3())
 
-    })
+    });
 
     mapboxgl.accessToken = mapboxToken;
 
