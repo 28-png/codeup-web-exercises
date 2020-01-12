@@ -55,8 +55,8 @@
 <script>
 
 
-    let getWeatherUpdate = function(inputLat, inputLon) {
-        $.ajax("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkies + "/29.4241,-98.4936"
+    var getWeatherUpdate = function(inputLat, inputLon) {
+        $.ajax("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkies + "/" + inputLat + "," + inputLon
         ).done(function (weather) {
             console.log(weather);
             var iconKeys = {
@@ -78,7 +78,7 @@
                 var date = new Date(this.valueOf());
                 date.setDate(date.getDate() + days);
                 return date;
-            }
+            };
 
             var date = new Date();
 
@@ -128,7 +128,13 @@
                     '</div>'
             }
 
-            $('#renderContent3').append(renderOnPage3())
+            $('#renderContent3').append(renderOnPage3());
+
+            $('#submit-lon-lat-user-input').click(function() {
+                getWeatherUpdate($('#lat-user-input').value, $('#lon-user-input').value)
+                var lonLatArray = [$('#lon-user-input').value, $('#lat-user-input').value]
+                marker.setLngLat(lonLatArray);
+            });
 
 
             mapboxgl.accessToken = mapboxToken;
@@ -162,7 +168,7 @@
 
         });
     }
-    getWeatherUpdate()
+    getWeatherUpdate(29.4241, -98.4936)
 </script>
 </body>
 </html>
