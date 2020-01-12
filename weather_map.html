@@ -38,7 +38,13 @@
         </div>
     </div>
     </div>
-
+<div id="lon-lat-user-input">
+    <h3>Longitude:</h3>
+    <input type="text" id="lon-user-input">
+    <h3>Latitude:</h3>
+    <input type="text" id="lat-user-input">
+    <button type="submit" id="submit-lon-lat-user-input">Search Weather</button>
+</div>
 <div id='map' class="mt-3" style='width: 1233px; height: 500px;'></div>
 <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
@@ -49,110 +55,114 @@
 <script>
 
 
+    let getWeatherUpdate = function(inputLat, inputLon) {
+        $.ajax("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkies + "/29.4241,-98.4936"
+        ).done(function (weather) {
+            console.log(weather);
+            var iconKeys = {
+                snow: "img/climacons-master/SVG/Snowflake.svg",
+                rain: "img/climacons-master/SVG/Cloud-Rain.svg",
+                clearday: "img/climacons-master/SVG/Sun.svg",
+                partlycloudyday: "img/climacons-master/SVG/Cloud-Sun.svg",
+                fog: "img/climacons-master/SVG/Cloud-Fog.svg",
+                cloudy: "img/climacons-master/SVG/Cloud.svg",
+                clearnight: "img/climacons-master/SVG/Moon.svg",
+                partlycloudynight: "img/climacons-master/SVG/Cloud-Moon.svg",
+                sleet: "img/climacons-master/SVG/Cloud-Snow.svg",
+                wind: "img/climacons-master/SVG/Wind.svg"
 
-    $.ajax("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkies + "/29.4241,-98.4936"
-    ).done(function(weather) {
-        console.log(weather);
-        var iconKeys = {
-            snow: "img/climacons-master/SVG/Snowflake.svg",
-            rain: "img/climacons-master/SVG/Cloud-Rain.svg",
-            clearday: "img/climacons-master/SVG/Sun.svg",
-            partlycloudyday: "img/climacons-master/SVG/Cloud-Sun.svg",
-            fog: "img/climacons-master/SVG/Cloud-Fog.svg",
-            cloudy: "img/climacons-master/SVG/Cloud.svg",
-            clearnight: "img/climacons-master/SVG/Moon.svg",
-            partlycloudynight: "img/climacons-master/SVG/Cloud-Moon.svg",
-            sleet: "img/climacons-master/SVG/Cloud-Snow.svg",
-            wind: "img/climacons-master/SVG/Wind.svg"
-
-        };
-
-
-        Date.prototype.addDays = function(days) {
-            var date = new Date(this.valueOf());
-            date.setDate(date.getDate() + days);
-            return date;
-        }
-
-        var date = new Date();
+            };
 
 
-       // first day
+            Date.prototype.addDays = function (days) {
+                var date = new Date(this.valueOf());
+                date.setDate(date.getDate() + days);
+                return date;
+            }
 
-       function renderOnPage() {
-            var  pendingString = weather.currently.icon;
-           var finalString = pendingString.split("-").join("");
-           return '<div>' +
-               '<h5>' + date.addDays(0).toString().substring(0, 10) + '</h5>' +
-               '<h4 class="d-flex justify-content-center">' + weather.currently.temperature + '°'  + '/' + weather.currently.apparentTemperature + '°' + '</h4>' +
-                   '<h6>Time Zone: ' + weather.timezone + '</h6>' +
-                    '<img src=' + iconKeys[finalString] +  '>' +
-                  '<p>Summary: ' + weather.currently.summary + '</p>' +
-            '</div>'
-       }
+            var date = new Date();
+
+
+            // first day
+
+            function renderOnPage() {
+                var pendingString = weather.currently.icon;
+                var finalString = pendingString.split("-").join("");
+                return '<div>' +
+                    '<h5>' + date.addDays(0).toString().substring(0, 10) + '</h5>' +
+                    '<h4 class="d-flex justify-content-center">' + weather.currently.temperature + '°' + '/' + weather.currently.apparentTemperature + '°' + '</h4>' +
+                    '<h6>Time Zone: ' + weather.timezone + '</h6>' +
+                    '<img src=' + iconKeys[finalString] + '>' +
+                    '<p>Summary: ' + weather.currently.summary + '</p>' +
+                    '</div>'
+            }
+
             $('#renderContent').append(renderOnPage());
 
 
-       // second day
-       function renderOnPage2() {
-        var pendingString = weather.daily.data[1].icon;
-        var finalString = pendingString.split("-").join("");
-            return '<div>' +
-                '<h5>' + date.addDays(1).toString().substring(0, 10) + '</h5>' +
-                '<h4 class="d-flex justify-content-center">' + weather.daily.data[1].temperatureLow + '°' + '/' + weather.daily.data[1].temperatureHigh + '°' + '</h4>' +
-                '<h6>Time Zone: ' + weather.timezone + '</h6>' +
+            // second day
+            function renderOnPage2() {
+                var pendingString = weather.daily.data[1].icon;
+                var finalString = pendingString.split("-").join("");
+                return '<div>' +
+                    '<h5>' + date.addDays(1).toString().substring(0, 10) + '</h5>' +
+                    '<h4 class="d-flex justify-content-center">' + weather.daily.data[1].temperatureLow + '°' + '/' + weather.daily.data[1].temperatureHigh + '°' + '</h4>' +
+                    '<h6>Time Zone: ' + weather.timezone + '</h6>' +
                     '<img src=' + iconKeys[finalString] + '>' +
-               '<p>Summary: ' + weather.daily.data[1].summary + '</p>' +
-               '</div>'
-        }
-        $('#renderContent2').append(renderOnPage2());
+                    '<p>Summary: ' + weather.daily.data[1].summary + '</p>' +
+                    '</div>'
+            }
 
-        // third day
-        function renderOnPage3() {
-        var pendingString = weather.daily.data[2].icon;
-            var finalString = pendingString.split("-").join("");
-            return '<div>' +
-                '<h5>' + date.addDays(2).toString().substring(0, 10) + '</h5>' +
-                '<h4 class="d-flex justify-content-center">' + weather.daily.data[2].temperatureLow + '°' + '/' + weather.daily.data[2].temperatureHigh + '°' + '</h4>' +
-                '<h6>Time Zone: ' + weather.timezone + '</h6>' +
+            $('#renderContent2').append(renderOnPage2());
+
+            // third day
+            function renderOnPage3() {
+                var pendingString = weather.daily.data[2].icon;
+                var finalString = pendingString.split("-").join("");
+                return '<div>' +
+                    '<h5>' + date.addDays(2).toString().substring(0, 10) + '</h5>' +
+                    '<h4 class="d-flex justify-content-center">' + weather.daily.data[2].temperatureLow + '°' + '/' + weather.daily.data[2].temperatureHigh + '°' + '</h4>' +
+                    '<h6>Time Zone: ' + weather.timezone + '</h6>' +
                     '<img src=' + iconKeys[finalString] + '>' +
-                '<p>Summary: ' + weather.daily.data[2].summary + '</p>' +
-                '</div>'
-        }
-        $('#renderContent3').append(renderOnPage3())
+                    '<p>Summary: ' + weather.daily.data[2].summary + '</p>' +
+                    '</div>'
+            }
 
-    });
-
-    mapboxgl.accessToken = mapboxToken;
-
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/dark-v10',
-        zoom: 11,
-        center: [-98.4951, 29.4246]
-    });
-
-    var  markerOptions = {
-        color: "red",
-        rotation: 2,
-        draggable: true
-    };
-
-    var marker = new mapboxgl.Marker(markerOptions)
-        .setLngLat([-98.4951, 29.4246])
-        .addTo(map);
+            $('#renderContent3').append(renderOnPage3())
 
 
-    marker.setPopup()
+            mapboxgl.accessToken = mapboxToken;
 
-    map.addControl(
-        new MapboxGeocoder({
-            accessToken: mapboxgl.accessToken,
-            mapboxgl: mapboxgl
-        })
-    );
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/dark-v10',
+                zoom: 11,
+                center: [-98.4951, 29.4246]
+            });
 
 
+            var markerOptions = {
+                color: "red",
+                rotation: 2,
+                draggable: true
+            };
+
+            var marker = new mapboxgl.Marker(markerOptions)
+                .setLngLat([-98.4951, 29.4246])
+                .addTo(map);
+            marker.setPopup()
+
+            map.addControl(
+                new MapboxGeocoder({
+                    accessToken: mapboxgl.accessToken,
+                    mapboxgl: mapboxgl
+
+                })
+            );
+
+        });
+    }
+    getWeatherUpdate()
 </script>
 </body>
 </html>
