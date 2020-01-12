@@ -55,15 +55,11 @@
 <script>
 
 
-    var getWeatherUpdate = function(inputLat, inputLon) {
-        $.ajax("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkies + "/" + inputLat + "," + inputLon
-        ).done(function (weather) {
-            console.log(weather);
             var iconKeys = {
                 snow: "img/climacons-master/SVG/Snowflake.svg",
                 rain: "img/climacons-master/SVG/Cloud-Rain.svg",
                 clearday: "img/climacons-master/SVG/Sun.svg",
-                partlycloudyday: "img/climacons-master/SVG/Cloud-Sun.svg",
+               partlycloudyday: "img/climacons-master/SVG/Cloud-Sun.svg",
                 fog: "img/climacons-master/SVG/Cloud-Fog.svg",
                 cloudy: "img/climacons-master/SVG/Cloud.svg",
                 clearnight: "img/climacons-master/SVG/Moon.svg",
@@ -72,6 +68,11 @@
                 wind: "img/climacons-master/SVG/Wind.svg"
 
             };
+    var getWeatherUpdate = function(inputLat, inputLon) {
+        $.ajax("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkies + "/" + inputLat + "," + inputLon
+        ).done(function (weather) {
+           console.log(weather);
+
 
 
             Date.prototype.addDays = function (days) {
@@ -130,6 +131,8 @@
 
             $('#renderContent3').append(renderOnPage3());
 
+        });
+    };
             $('#submit-lon-lat-user-input').click(function() {
                 getWeatherUpdate($('#lat-user-input').value, $('#lon-user-input').value)
                 var lonLatArray = [$('#lon-user-input').value, $('#lat-user-input').value]
@@ -166,8 +169,12 @@
                 })
             );
 
-        });
-    }
+            marker.on("dragend", function(){
+                getWeatherUpdate(marker._lngLat.lat, marker._lngLat.lng)
+            });
+
+
+
     getWeatherUpdate(29.4241, -98.4936)
 </script>
 </body>
