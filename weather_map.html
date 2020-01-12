@@ -146,7 +146,7 @@
                 container: 'map',
                 style: 'mapbox://styles/mapbox/dark-v10',
                 zoom: 11,
-                center: [-98.4951, 29.4246]
+                center: [-98.4936, 29.4241]
             });
 
 
@@ -157,9 +157,9 @@
             };
 
             var marker = new mapboxgl.Marker(markerOptions)
-                .setLngLat([-98.4951, 29.4246])
+                .setLngLat([-98.4936, 29.4241])
                 .addTo(map);
-            marker.setPopup()
+            marker.setPopup();
 
             map.addControl(
                 new MapboxGeocoder({
