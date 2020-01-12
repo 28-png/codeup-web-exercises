@@ -50,7 +50,7 @@
             rain: "img/climacons-master/SVG/Cloud-Rain.svg",
             clearday: "img/climacons-master/SVG/Sun.svg",
             partlycloudyday: "img/climacons-master/SVG/Cloud-Sun.svg",
-            fog: "img/climacons-master/SVG/Cloud-Fog-Moon.svg",
+            fog: "img/climacons-master/SVG/Cloud-Fog.svg",
             cloudy: "img/climacons-master/SVG/Cloud.svg",
             clearnight: "img/climacons-master/SVG/Moon.svg",
             partlycloudynight: "img/climacons-master/SVG/Cloud-Moon.svg",
@@ -124,7 +124,16 @@
         center: [-98.4951, 29.4246]
     });
 
+    var  markerOptions = {
+        color: "red",
+        rotation: 2
+    };
 
+    var marker = new mapboxgl.Marker(markerOptions)
+        .setLngLat([-98.4951, 29.4246])
+        .addTo(map);
+
+    marker.setPopup()
 
 
 </script>
