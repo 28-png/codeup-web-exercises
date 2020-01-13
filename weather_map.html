@@ -135,6 +135,12 @@
 
         });
     };
+
+      function emptyWeather() {
+          $('#renderContent').empty();
+          $('#renderContent2').empty();
+          $('#renderContent3').empty();
+      }
            var submitButton = $('#submit-lng-lat-input')
            var latInput = $('#lat-input')
             var lngInput = $('#lng-input')
@@ -143,9 +149,7 @@
                 updateWeatherMap(latInput.val(), lngInput.val())
                 var lonLatArray = [lngInput.val(), latInput.val()]
                 marker.setLngLat(lonLatArray);
-                $('#renderContent').empty()
-                $('#renderContent2').empty()
-                $('#renderContent3').empty()
+              emptyWeather()
             });
 
 
@@ -180,15 +184,12 @@
             );
 
             marker.on("dragend", function(){
-                updateWeatherMap(marker._lngLat.lat, marker._lngLat.lng)
-                $('#renderContent').empty()
-                $('#renderContent2').empty()
-                $('#renderContent3').empty()
+                updateWeatherMap(marker._lngLat.lat, marker._lngLat.lng);
+                emptyWeather()
             });
 
     reverseGeocode({lng: lngInput.val(), lat: latInput.val()}, mapboxToken).then(function(results) {
-
-                console.log(results);
+            console.log(results);
             });
 
     updateWeatherMap(29.4241, -98.4936);
