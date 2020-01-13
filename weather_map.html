@@ -174,10 +174,10 @@
               if(keycode == '13'){
                   var inputString = geocodeInput.val();
                   console.log(inputString);
-                  geocode(inputString, mapboxToken).then(function(result) {
-                      console.log(result);
-                     updateWeatherMap(result.features[0].center[1], result.features[0].center[0]);
-                     marker.setLngLat(result.features[0].center[1], result.features[0].center[0]);
+                 geocode(inputString, mapboxToken).then(function(result) {
+                     console.log(result)
+                    updateWeatherMap(result.features[0].center[1], result.features[0].center[0]);
+                    marker.setLngLat(result.features[0].center[1], result.features[0].center[0]);
                       map.setCenter(result.features[0].center[1], result.features[0].center[0]);
 
                    });
