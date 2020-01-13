@@ -181,6 +181,9 @@
 
             marker.on("dragend", function(){
                 updateWeatherMap(marker._lngLat.lat, marker._lngLat.lng)
+                $('#renderContent').empty()
+                $('#renderContent2').empty()
+                $('#renderContent3').empty()
             });
 
     reverseGeocode({lng: lngInput.val(), lat: latInput.val()}, mapboxToken).then(function(results) {
