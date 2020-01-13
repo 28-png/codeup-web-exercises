@@ -40,9 +40,9 @@
     </div>
 
     <h3>Longitude:</h3>
-    <input type="text" id="lng-input" value="29.7604">
+    <input type="text" id="lng-input" value="-95.3698">
     <h3>Latitude:</h3>
-   <input type="text" id="lat-input" value="-95.3698">
+   <input type="text" id="lat-input" value="29.7604">
 
 
     <button type="submit" id="submit-lng-lat-input">Search Weather</button>
@@ -76,8 +76,6 @@
         ).done(function (weather) {
            console.log(weather);
 
-
-
             Date.prototype.addDays = function (days) {
                 var date = new Date(this.valueOf());
                 date.setDate(date.getDate() + days);
@@ -85,7 +83,6 @@
             };
 
             var date = new Date();
-
 
             // first day
 
@@ -134,6 +131,8 @@
 
             $('#renderContent3').append(renderOnPage3());
 
+
+
         });
     };
            var submitButton = $('#submit-lng-lat-input')
@@ -141,9 +140,12 @@
             var lngInput = $('#lng-input')
 
             submitButton.click(function() {
-                updateWeatherMap(latInput.val(), lonInput.val())
+                updateWeatherMap(latInput.val(), lngInput.val())
                 var lonLatArray = [lngInput.val(), latInput.val()]
                 marker.setLngLat(lonLatArray);
+                $('#renderContent').empty()
+                $('#renderContent2').empty()
+                $('#renderContent3').empty()
             });
 
 
@@ -174,17 +176,19 @@
                     accessToken: mapboxgl.accessToken,
                     mapboxgl: mapboxgl
 
-
                 })
             );
-
-
 
             marker.on("dragend", function(){
                 updateWeatherMap(marker._lngLat.lat, marker._lngLat.lng)
             });
-    updateWeatherMap(29.4241, -98.4936)
 
+    reverseGeocode({lng: lngInput.val(), lat: latInput.val()}, mapboxToken).then(function(results) {
+
+                console.log(results);
+            });
+
+    updateWeatherMap(29.4241, -98.4936);
 
 
 </script>
