@@ -170,19 +170,19 @@
             });
 
            geocodeInput.keypress(function(event){
+                      emptyWeather();
                var keycode = (event.keyCode ? event.keyCode : event.which);
               if(keycode == '13'){
                   var inputString = geocodeInput.val();
                   console.log(inputString);
                  geocode(inputString, mapboxToken).then(function(result) {
-                     console.log(result)
-                    updateWeatherMap(result.features[0].center[1], result.features[0].center[0]);
-                    marker.setLngLat(result.features[0].center[1], result.features[0].center[0]);
-                      map.setCenter(result.features[0].center[1], result.features[0].center[0]);
+                     console.log(result);
+                   updateWeatherMap(result.features[0].center[1], result.features[0].center[0]);
+                    marker.setLngLat({lat: result.features[0].center[1], lng: result.features[0].center[0]});
+                      map.setCenter({lat: result.features[0].center[1], lng: result.features[0].center[0]});
 
                    });
                 }
-                      emptyWeather()
             });
 
             mapboxgl.accessToken = mapboxToken;
