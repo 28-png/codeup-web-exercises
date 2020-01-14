@@ -32,7 +32,11 @@
 var unorderedId = $('#favorite-food');
 var addInput = $('#input');
 var addButton = $('#add-to-list');
-var heading1 = $('#change-me')
+var heading1 = $('#change-me');
+var cohortRender = $('#my-cohort');
+var cohortInput = $('#cohort-name');
+var cohortButton = $('#change-cohort');
+var cohortHighlight = $('#highlight');
 
 addButton.click(function() {
     unorderedId.append(
@@ -41,6 +45,18 @@ addButton.click(function() {
 
     )
 })
+
+    heading1.dblclick(function() {
+        $(this).css("background-color", "yellow")
+    })
+
+    cohortButton.click(function() {
+        cohortRender.append(cohortInput.val())
+    })
+
+    cohortHighlight.click(function() {
+        cohortRender.css("background-color", "yellow")
+    })
 
 
 
