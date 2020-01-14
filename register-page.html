@@ -11,7 +11,11 @@
     <script src="https://kit.fontawesome.com/9a07fbf157.js" crossorigin="anonymous"></script>
 </head>
     <body>
-     <form>
+    <script src="js/jQuery-2.2.4.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
+<!--    <script src="https://github.com/jquery-validation/jquery-validation"></script>-->
+   <script defer  src="js/javascript.js"></script>
+     <form class="validateForm">
    <h1>Register for Free Today!!!</h1>
          <div class="field-name">
                  <i class="fas fa-user"></i>
@@ -26,11 +30,11 @@
              <div class="field-password inactive">
                  <i class="fas fa-key"></i>
                 <input type="password" name="password" id="password" placeholder="Password" onkeyup="validatePassword(password);" required>
-                 <i class="fas fa-arrow-down"></i>
+                <i class="fas fa-arrow-down"></i>
              </div>
         <div class="field-password inactive">
                  <i class="fas fa-key"></i>
-                 <input type="password" name="confirm_password" id="confirm_password" placeholder="Re-Password" onkeyup="check();" required>
+                 <input type="password" name="confirm_password" id="confirm_password" placeholder="Re-Password" onclick="validatePassword2()" onkeyup="check();" required>
                  <i class="fas fa-arrow-down"></i>
              </div>
              <div class="field-finish inactive">
@@ -39,6 +43,5 @@
                  <i class="fas fa-check"></i>
              </div>
       </form>
-   <script defer src="js/javascript.js"></script>
     </body>
 </html>
