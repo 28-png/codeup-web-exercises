@@ -1,5 +1,5 @@
-function animatedForm() {
     const arrows = document.querySelectorAll(".fa-arrow-down");
+function animatedForm() {
 
     arrows.forEach(arrow => {
     arrow.addEventListener('click', () => {
@@ -67,35 +67,24 @@ var check = function() {
     }
 }
 
-// var grTable = new GlideRecord("test_table");
-// grTable.addQuery("user_name", "unique_id");
-// grTable.addQuery("password", "unique_id");
-// grTable.query();
-// grTable.update();
-//
-// if (password === "set_value"){
-//     grTable.alert("this is a test");
-// }else{
-//    grTable.alert("this is not a legitmate password");
-//    }
+
 function validatePassword2() {
+    const parent = arrows.parentElement;
+    const nextForm = parent.nextElementSibling;
     let validator = $(".validateForm").validate({
         rules: {
             password: "required",
-           confirmpassword: {
+           confirm_password: {
                 equalTo: "#password"
             }
         },
-        messages: {
+       messages: {
             password: " Enter Password",
-            confirmpassword: " Enter Confirm Password Same as Password"
+            confirm_password: " Passwords Must Match"
         }
     });
-    if (validator.form()) {
-        alert('Success');
-    } else {
-        alert("passwords do not match")
-    }
+    validator.form()
+    nextSlide(parent, nextForm)
 }
 
 
