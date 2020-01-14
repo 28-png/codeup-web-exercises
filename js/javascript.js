@@ -69,17 +69,15 @@ var check = function() {
 
 
 function validatePassword2() {
-    // const parent = arrows.parentElement;
-    // const nextForm = parent.nextElementSibling;
     let validator = $(".validateForm").validate({
         rules: {
             password: "required",
-           confirm_password: {
+          confirm_password: {
                 equalTo: "#password"
             }
         },
         messages: {
-            password: " Enter Password",
+           password: " Enter Password",
             confirm_password: " Passwords Must Match"
         }
     });
