@@ -145,6 +145,12 @@
 
            $('#renderContent3').append(renderOnPage3());
 
+
+
+        });
+      };
+            function firstHeader() {
+
             geocode("San Antonio, TX", mapboxToken).then(function(result) {
                 console.log(result);
             $('#main-header').append(
@@ -154,10 +160,8 @@
             )
 
             });
-
-
-        });
-      };
+            }
+            firstHeader()
             function emptyWeather() {
           $('#renderContent').empty();
           $('#renderContent2').empty();
