@@ -7,7 +7,7 @@ function animatedForm() {
             const parent = arrow.parentElement;
             const nextForm = parent.nextElementSibling;
 
-            if(input.type === "text" && validateUser(input)) { //string
+            if(input.type === "text" && validateUser(input)) {
                 nextSlide(parent, nextForm);
             } else if (input.type === "email" && validateEmail(input)) {
                 nextSlide(parent, nextForm);
@@ -82,10 +82,8 @@ function validatePassword2() {
         }
     });
     validator.form()
-    nextSlide()
+    animatedForm()
 }
-
-
 
 function nextSlide(parent, nextForm) {
     parent.classList.add('inactive');
