@@ -10,11 +10,11 @@ h1 {
 }
 
 body {
-background-image: url("img/colorful-img.png");
-   background-blend-mode: color-burn;
+    background-image: url("img/colorful-img.png");
+    background-blend-mode: color-burn;
     font-family: "Fjalla one", cursive;
     height: 100vh;
-   display: flex;
+    display: flex;
     background-color: rgb(87, 189, 130);
     transition: background 0.5s ease;
     position: relative;
@@ -85,7 +85,6 @@ div.active {
     }
 
 }
-
 
 
 
