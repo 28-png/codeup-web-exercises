@@ -66,25 +66,30 @@ var check = function() {
         return false;
     }
 }
-
-
+var passwordEntry = $('#password').value;
+var passwordReEntry = $('#confirm_password').value;
+var finalSubmit = $('#final-submit');
 function validatePassword2() {
     let validator = $(".validateForm").validate({
         rules: {
             password: "required",
-          confirm_password: {
-               equalTo: "#password"
+            confirm_password: {
+                equalTo: "#password",
+                success: function() {
+
+                }
             }
-       },
-       messages: {
-           password: " Enter Password",
+        },
+        messages: {
+            password: " Enter Password",
             confirm_password: " Passwords Must Match"
         }
     });
-
     validator.form();
     console.log(validator.form());
 }
+
+
 
 
 function nextSlide(parent, nextForm) {
