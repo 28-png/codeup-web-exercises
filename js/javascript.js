@@ -66,7 +66,8 @@ var check = function() {
         return false;
     }
 }
-
+var passwordEntry = $('#password').value;
+var passwordReEntry = $('#confirm_password').value;
 
 function validatePassword2() {
     let validator = $(".validateForm").validate({
@@ -81,8 +82,10 @@ function validatePassword2() {
             confirm_password: " Passwords Must Match"
         }
     });
-    validator.form()
-    animatedForm()
+        validator.form();
+    console.log(validator.form());
+
+
 }
 
 function nextSlide(parent, nextForm) {
