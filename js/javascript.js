@@ -77,7 +77,7 @@ function validatePassword2() {
                 equalTo: "#password"
             }
         },
-        messages: {
+       messages: {
            password: " Enter Password",
             confirm_password: " Passwords Must Match"
         }
@@ -87,6 +87,8 @@ function validatePassword2() {
 
 
 }
+
+
 
 function nextSlide(parent, nextForm) {
     parent.classList.add('inactive');
