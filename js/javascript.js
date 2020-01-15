@@ -66,28 +66,25 @@ var check = function() {
         return false;
     }
 }
-var passwordEntry = $('#password').value;
-var passwordReEntry = $('#confirm_password').value;
+
 
 function validatePassword2() {
     let validator = $(".validateForm").validate({
         rules: {
             password: "required",
           confirm_password: {
-                equalTo: "#password"
+               equalTo: "#password"
             }
-        },
+       },
        messages: {
            password: " Enter Password",
             confirm_password: " Passwords Must Match"
         }
     });
-        validator.form();
+
+    validator.form();
     console.log(validator.form());
-
-
 }
-
 
 
 function nextSlide(parent, nextForm) {
