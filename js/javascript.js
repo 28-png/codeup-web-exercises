@@ -17,6 +17,7 @@ function animatedForm() {
                 parent.style.animation = "shake 0.5s ease";
 
             }
+
         });
     });
 }
@@ -70,26 +71,37 @@ var passwordEntry = $('#password').value;
 var passwordReEntry = $('#confirm_password').value;
 var finalSubmit = $('#final-submit');
 function validatePassword2() {
+    passwordReEntry = true;
     let validator = $(".validateForm").validate({
         rules: {
             password: "required",
-            confirm_password: {
-                equalTo: "#password",
-                success: function() {
-
-                }
+        confirm_password: {
+                equalTo: "#password"
             }
         },
-        messages: {
+       messages: {
             password: " Enter Password",
             confirm_password: " Passwords Must Match"
         }
     });
-    validator.form();
+    if(passwordReEntry && validator.form() !== true) {
+        validator.form();
     console.log(validator.form());
+    console.log(passwordReEntry)
+    } else if(passwordReEntry && validator.form() === true) {
+
+        console.log(validator.form());
+        console.log(passwordReEntry)
+    }
 }
 
 
+// if(passwordReEntry !== passwordEntry) {
+//     validatePassword2()
+// } else if(passwordReEntry === passwordEntry) {
+//     $("form").removeClass('validateForm')
+//     animatedForm()
+// }
 
 
 function nextSlide(parent, nextForm) {
