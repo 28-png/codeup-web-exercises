@@ -4,12 +4,12 @@ function animatedForm() {
     arrows.forEach(arrow => {
         arrow.addEventListener('click', () => {
             const input = arrow.previousElementSibling;
-            const parent = arrow.parentElement;
+           const parent = arrow.parentElement;
             const nextForm = parent.nextElementSibling;
 
-            if(input.type === "text" && validateUser(input)) {
+           if(input.type === "text" && validateUser(input)) {
                 nextSlide(parent, nextForm);
-            } else if (input.type === "email" && validateEmail(input)) {
+           } else if (input.type === "email" && validateEmail(input)) {
                 nextSlide(parent, nextForm);
             } else if (input.type === "password" && validatePassword(input)) {
                 nextSlide(parent, nextForm);
@@ -17,6 +17,7 @@ function animatedForm() {
                 parent.style.animation = "shake 0.5s ease";
 
             }
+
         });
     });
 }
@@ -50,14 +51,14 @@ function validatePassword(password) {
         error('rgb(87, 189, 130)');
         return true;
     } else if(mediumRegex.test(password.value)) {
-        error('rgb(255, 126, 0)')
+        error('#FF0')
     } else {
         error('rgb(189, 87, 87)');
 
     }
 }
 
-var check = function() {
+const check = function () {
     if (document.getElementById('password').value === document.getElementById('confirm_password').value) {
         error('rgb(87, 189, 130)');
         return true;
@@ -65,25 +66,34 @@ var check = function() {
         error('rgb(255, 191, 0)');
         return false;
     }
-}
+};
 
-
+let passwordReEntry = $('#confirm_password').value;
 function validatePassword2() {
-    let validator = $(".validateForm").validate({
-        rules: {
-            password: "required",
-          confirm_password: {
-                equalTo: "#password"
+    arrows.forEach(arrow => {
+        const parent = arrow.parentElement;
+        const nextForm = parent.nextElementSibling;
+        passwordReEntry = true;
+        let validator = $(".validateForm").validate({
+            rules: {
+                password: "required",
+                confirm_password: {
+                    equalTo: "#password"
+                }
+            },
+            messages: {
+                password: " Enter Password",
+                confirm_password: " Passwords Must Match"
             }
-        },
-        messages: {
-           password: " Enter Password",
-            confirm_password: " Passwords Must Match"
+        });
+        if (passwordReEntry && validator.form() !== true) {
+            validator.form();
+        } else if (passwordReEntry && validator.form() === true) {
+            nextSlide(parent, nextForm)
         }
     });
-    validator.form()
-    animatedForm()
 }
+
 
 function nextSlide(parent, nextForm) {
     parent.classList.add('inactive');
