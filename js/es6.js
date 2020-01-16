@@ -66,10 +66,10 @@ users.forEach(function(user) {
  // const name = user.name;
   // const email = user.email;
   // const languages = user.languages;
-const {name,email,languages} = users;
+const {name,email,languages} = user;
+  console.log(user);
   // TODO: rewrite the assignment below to use template strings
-  developers.push(`${name}'s email is ${email}  ${name} knows ${languages}`)
-
+  developers.push(`${name}'s email is ${email}  ${name} knows ${languages}`);
 });
 
 // TODO: Use `let` for the following variable
@@ -81,4 +81,4 @@ let list = '<ul>';
   // TODO: rewrite the assignment below to use template strings
   list += `<li> ${developer} </li>`;
 };
-list += '</ul>';
+list += '</ul>'
