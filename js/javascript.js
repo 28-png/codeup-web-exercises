@@ -51,7 +51,7 @@ function validatePassword(password) {
         error('rgb(87, 189, 130)');
         return true;
     } else if(mediumRegex.test(password.value)) {
-        error('rgb(255, 126, 0)')
+        error('#FF0')
     } else {
         error('rgb(189, 87, 87)');
 
