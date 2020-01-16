@@ -32,11 +32,18 @@ document.getElementById('message').innerHTML = `<p>Our ${dog.breed} is named ${d
     console.log(`hello! ${name}`)
     };
 
-newFunction("Matt")
+newFunction("Matt");
 
+const add7 = num => num + 7;
+    console.log(add7(14));
 
+const newHello = (name2 = "Codeup") => `Hello, ${name2}!`; // first is default parameter then parameter when name is passed through
+console.log(newHello("europa"));
+    console.log(newHello())
 
-
+    const sayHello = (myName = "name") => `Hello, ${myName}!`
+    console.log(sayHello("Matt"))
+    console.log(sayHello())
 
 
 }
