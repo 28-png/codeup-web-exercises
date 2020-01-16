@@ -31,6 +31,7 @@ document.getElementById('message').innerHTML = `<p>Our ${dog.breed} is named ${d
     const newFunction = (name) => {
     console.log(`hello! ${name}`)
     };
+
 newFunction("Matt")
 
 
