@@ -5,7 +5,7 @@ function animatedForm() {
         arrow.addEventListener('click', () => {
             const input = arrow.previousElementSibling;
            const parent = arrow.parentElement;
-            const nextForm = parent.nextElementSibling;
+           const nextForm = parent.nextElementSibling;
 
            if(input.type === "text" && validateUser(input)) {
                 nextSlide(parent, nextForm);
