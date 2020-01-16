@@ -20,10 +20,18 @@ function explore() {
 
 explore();
 
+let dog = {
+    name:"dog",
+    breed:"Chihuahua"
+}
+
+document.getElementById('message').innerHTML = `<p>Our ${dog.breed} is named ${dog.name}</p>`;
 
 
-
-
+    const newFunction = (name) => {
+    console.log(`hello! ${name}`)
+    };
+newFunction("Matt")
 
 
 
