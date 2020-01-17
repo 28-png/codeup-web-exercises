@@ -40,17 +40,23 @@
     ];
 
 const threes = users.filter(user => user.languages.length >= 3);
-console.log(threes)
+console.log(threes);
 
     const emails = users.map(user => user.email);
     console.log(emails);
 
 
-    const sum = users.reduce((accumulation, currentNumber) => {
+    const average = users.reduce((accumulation, currentNumber) => {
         return accumulation + currentNumber.yearsOfExperience
 
-}, 0);
-    console.log(sum)
+}, 0) / users.length;
+    console.log(average)
+
+
+
+
+
+
 
 
 
