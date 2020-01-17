@@ -39,32 +39,21 @@
         }
     ];
 
+const threes = users.filter(user => user.languages.length >= 3);
+console.log(threes)
+
+    const emails = users.map(user => user.email);
+    console.log(emails);
+
+
+    const sum = users.reduce((accumulation, currentNumber) => {
+        let sum = accumulation + currentNumber.yearsOfExperience;
+        return sum / currentNumber.yearsOfExperience
+}, 0)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    console.log(sum)
 
 
 }
