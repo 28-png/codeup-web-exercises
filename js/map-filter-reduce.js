@@ -50,12 +50,15 @@ console.log(threes);
         return accumulation + currentNumber.yearsOfExperience
 
 }, 0) / users.length;
-    console.log(average)
+    console.log(average);
 
 
 
+let longestEmail = users.reduce((emailCount, emailLetter) => {
+    return emailCount.email.length > emailLetter.email.length ? emailCount : emailLetter;
+});
 
-
+    console.log(longestEmail);
 
 
 
