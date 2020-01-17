@@ -46,10 +46,9 @@ console.log(threes)
     console.log(emails);
 
 
-    const sum = users.reduce((accumulation, currentNumber) => {
-        return accumulation + currentNumber.yearsOfExperience;
+    const sum = users.reduce((accumulation, currentNumber) =>
+        accumulation + currentNumber.yearsOfExperience / currentNumber.yearsOfExperience.length)
 
-}, 0);
 
 
 
