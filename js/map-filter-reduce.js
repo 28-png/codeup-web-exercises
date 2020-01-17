@@ -46,25 +46,20 @@ console.log(threes);
     console.log(emails);
 
 
-    const average = users.reduce((accumulation, currentNumber) => {
-        return accumulation + currentNumber.yearsOfExperience
-
-}, 0) / users.length;
+    const average = users.reduce((accumulation, currentNumber) =>
+        accumulation + currentNumber.yearsOfExperience, 0) / users.length;
     console.log(average);
 
 
 
-let longestEmail = users.reduce((emailCount, emailLetter) => {
-    return emailCount.email.length > emailLetter.email.length ? emailCount : emailLetter;
-});
+let longestEmail = users.reduce((emailCount, emailLetter) =>
+    emailCount.email.length > emailLetter.email.length ? emailCount : emailLetter).email;
 
     console.log(longestEmail);
 
     const instructorNames = users.reduce((nameCount, nameList) => {
         return  nameCount + " " + nameList.name
-
     }, 'your instructors are:');
-
     console.log(instructorNames + ".");
 
 
