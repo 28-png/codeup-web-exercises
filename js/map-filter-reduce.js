@@ -47,9 +47,10 @@ console.log(threes)
 
 
     const sum = users.reduce((accumulation, currentNumber) => {
-        let sum = accumulation + currentNumber.yearsOfExperience;
-        return sum / currentNumber.yearsOfExperience
-}, 0)
+        return accumulation + currentNumber.yearsOfExperience;
+
+}, 0);
+
 
 
 
