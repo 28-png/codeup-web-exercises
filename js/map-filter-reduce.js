@@ -62,9 +62,10 @@ let longestEmail = users.reduce((emailCount, emailLetter) => {
 
     const instructorNames = users.reduce((nameCount, nameList) => {
         return  nameCount + " " + nameList.name
-    }, 'your instructors are:')
 
-    console.log(instructorNames);
+    }, 'your instructors are:');
+
+    console.log(instructorNames + ".");
 
 
     const returnUnique = users.reduce((languages, user) => {
