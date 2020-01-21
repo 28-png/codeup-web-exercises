@@ -16,7 +16,6 @@
     wait(1000).then(() => console.log('You\'ll see this after 1 second'));
     wait(3000).then(() => console.log('You\'ll see this after 3 seconds'));
 
-
     function getGithubUsernames(username) {
         return fetch(`https://api.github.com/search/commits?q=sort:committer-date+committer:${username}`,
             {headers: {'Authorization': github, 'Accept': 'application/vnd.github.cloak-preview', }})
@@ -25,8 +24,6 @@
             let commit = res.items[0].commit.author;
                 commit.name;
                 commit.date;
-
-
                 console.log(commit)
             });
     }
