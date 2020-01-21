@@ -21,11 +21,13 @@
         return fetch(`https://api.github.com/search/commits?q=sort:committer-date+committer:${username}`,
             {headers: {'Authorization': github, 'Accept': 'application/vnd.github.cloak-preview', }})
             .then(response => response.json())
-            .then(res => {
+           .then(res => {
+            let commit = res.items[0].commit.author;
+                commit.name;
+                commit.date;
 
 
-
-                console.log(res)
+                console.log(commit)
             });
     }
 
