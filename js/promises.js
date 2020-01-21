@@ -18,10 +18,13 @@
 
 
     function getGithubUsernames(username) {
-        return fetch(`https://api.github.com/search/commits?q=sort:comitter+date:${username}`,
+        return fetch(`https://api.github.com/search/commits?q=sort:committer-date+committer:${username}`,
             {headers: {'Authorization': github, 'Accept': 'application/vnd.github.cloak-preview', }})
             .then(response => response.json())
             .then(res => {
+
+
+
                 console.log(res)
             });
     }
