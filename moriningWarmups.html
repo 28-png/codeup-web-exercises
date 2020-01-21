@@ -147,7 +147,7 @@ console.log(contains('flamingo'))
                 } , {
                     name: "Bijou",
                     heightInMM: 75,
-                    fur: ['white'],
+                   fur: ['white'],
                     gender: "female",
                     dateOfBirth: "July 10"
                 } , {
@@ -172,15 +172,21 @@ console.log(contains('flamingo'))
             ];
 
             function averageHeight(arr) {
-                var total = 0
+                var total = 0;
                 arr.forEach(function (ham) {
                     total += ham.heightInMM
-                })
+                });
                 return total/arr.length
             }
-            console.log(averageHeight(hamsters))
+            console.log(averageHeight(hamsters));
 
-
+            let isAnagram = (word1, word2) => {
+                letters1 = word1.toLowerCase().split('').sort();
+                letters2 = word2.toLowerCase().split('').sort();
+               return (letters1.join() === letters2.join())
+            };
+            console.log(isAnagram('dog', 'god'));
+            console.log(isAnagram('silent', 'listen'))
 
 
 
