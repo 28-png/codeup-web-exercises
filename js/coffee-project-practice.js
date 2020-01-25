@@ -15,7 +15,7 @@ function updateCoffees() {
     coffees.forEach(function(coffee) {
         if(coffee.roast === selectedRoast || selectedRoast === 'all roast') {
             if(coffee.name.toLowerCase().includes(selectCoffee.toLowerCase())) {
-                filteredCoffees.push(coffee);
+               filteredCoffees.push(coffee);
             }
         }
     });
